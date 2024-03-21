@@ -1,0 +1,58 @@
+{
+  "2": {
+    "inputs": {
+      "image": "512x512bkgd.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "24": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "multply",
+      "opacity": 66,
+      "color": "#FFBF30",
+      "background_image": [
+        "2",
+        0
+      ],
+      "layer_image": [
+        "15",
+        0
+      ],
+      "layer_mask": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "LayerStyle: ColorOverlay",
+    "_meta": {
+      "title": "LayerStyle: ColorOverlay"
+    }
+  }
+}

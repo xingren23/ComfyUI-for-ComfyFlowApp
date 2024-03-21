@@ -1,0 +1,62 @@
+{
+  "2": {
+    "inputs": {
+      "image": "512x512bkgd.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "19": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 50,
+      "distance_x": 25,
+      "distance_y": 25,
+      "grow": 6,
+      "blur": 18,
+      "shadow_color": "#000000",
+      "background_image": [
+        "2",
+        0
+      ],
+      "layer_image": [
+        "15",
+        0
+      ],
+      "layer_mask": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "LayerStyle: DropShadow",
+    "_meta": {
+      "title": "LayerStyle: DropShadow"
+    }
+  }
+}

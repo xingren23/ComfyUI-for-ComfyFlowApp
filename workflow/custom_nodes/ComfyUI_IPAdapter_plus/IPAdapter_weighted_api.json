@@ -1,0 +1,205 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "sd15/majicmixRealistic-v7.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "2": {
+    "inputs": {
+      "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "3": {
+    "inputs": {
+      "ipadapter_file": "ip-adapter_sd15.safetensors"
+    },
+    "class_type": "IPAdapterModelLoader",
+    "_meta": {
+      "title": "Load IPAdapter Model"
+    }
+  },
+  "4": {
+    "inputs": {
+      "clip_name": "ipadapter_image_encoder_sd15.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "6": {
+    "inputs": {
+      "image": "1344x768_hair.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "beautiful renaissance girl, detailed",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": "blurry, horror",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "seed": 0,
+      "steps": 35,
+      "cfg": 5,
+      "sampler_name": "ddim",
+      "scheduler": "ddim_uniform",
+      "denoise": 1,
+      "model": [
+        "13",
+        0
+      ],
+      "positive": [
+        "7",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "latent_image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "10": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "11": {
+    "inputs": {
+      "samples": [
+        "9",
+        0
+      ],
+      "vae": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "12": {
+    "inputs": {
+      "filename_prefix": "IPAdapter",
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "weight": 1,
+      "weight_type": "original",
+      "start_at": 0,
+      "end_at": 1,
+      "unfold_batch": false,
+      "ipadapter": [
+        "3",
+        0
+      ],
+      "embeds": [
+        "14",
+        0
+      ],
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "IPAdapterApplyEncoded",
+    "_meta": {
+      "title": "Apply IPAdapter from Encoded"
+    }
+  },
+  "14": {
+    "inputs": {
+      "ipadapter_plus": false,
+      "noise": 0.31,
+      "weight_1": 0.38,
+      "weight_2": 1,
+      "weight_3": 1,
+      "weight_4": 1,
+      "clip_vision": [
+        "4",
+        0
+      ],
+      "image_1": [
+        "15",
+        0
+      ],
+      "image_2": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "IPAdapterEncoder",
+    "_meta": {
+      "title": "Encode IPAdapter Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "1344x768_girl2.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  }
+}

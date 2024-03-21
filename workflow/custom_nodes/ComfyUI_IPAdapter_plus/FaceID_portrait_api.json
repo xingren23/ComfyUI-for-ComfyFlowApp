@@ -1,0 +1,284 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 134335974046449,
+      "steps": 35,
+      "cfg": 7,
+      "sampler_name": "ddpm",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "10",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "sd15/realcartoonPixar_v3.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "bronze sculpture of a woman\n\nhighly detailed, 4k, high resolution",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "blurry, low quality, distorted, photo, frame, naked, horror",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "10": {
+    "inputs": {
+      "weight": 1,
+      "noise": 0,
+      "weight_type": "original",
+      "start_at": 0,
+      "end_at": 1,
+      "faceid_v2": false,
+      "weight_v2": 1,
+      "unfold_batch": false,
+      "ipadapter": [
+        "11",
+        0
+      ],
+      "clip_vision": [
+        "12",
+        0
+      ],
+      "insightface": [
+        "13",
+        0
+      ],
+      "image": [
+        "30",
+        0
+      ],
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "IPAdapterApplyFaceID",
+    "_meta": {
+      "title": "Apply IPAdapter FaceID"
+    }
+  },
+  "11": {
+    "inputs": {
+      "ipadapter_file": "ip-adapter-full-face_sd15.safetensors"
+    },
+    "class_type": "IPAdapterModelLoader",
+    "_meta": {
+      "title": "Load IPAdapter Model"
+    }
+  },
+  "12": {
+    "inputs": {
+      "clip_name": "ipadapter_image_encoder_sd15.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "13": {
+    "inputs": {
+      "provider": "CPU"
+    },
+    "class_type": "InsightFaceLoader",
+    "_meta": {
+      "title": "Load InsightFace"
+    }
+  },
+  "14": {
+    "inputs": {
+      "image": "1344x768_girl2.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "1344x768_hair.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "16": {
+    "inputs": {
+      "image": "768x1344_dress.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "17": {
+    "inputs": {
+      "image1": [
+        "14",
+        0
+      ],
+      "image2": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "Batch Images"
+    }
+  },
+  "18": {
+    "inputs": {
+      "image1": [
+        "17",
+        0
+      ],
+      "image2": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "Batch Images"
+    }
+  },
+  "27": {
+    "inputs": {
+      "image": "girl.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "28": {
+    "inputs": {
+      "image1": [
+        "18",
+        0
+      ],
+      "image2": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "Batch Images"
+    }
+  },
+  "29": {
+    "inputs": {
+      "image": "girl.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "30": {
+    "inputs": {
+      "image1": [
+        "28",
+        0
+      ],
+      "image2": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "Batch Images"
+    }
+  }
+}

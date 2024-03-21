@@ -1,0 +1,240 @@
+{
+  "9": {
+    "inputs": {
+      "text": "POSITIVE PROMPT",
+      "clip": [
+        "19",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "19",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "14": {
+    "inputs": {
+      "samples": [
+        "40",
+        0
+      ],
+      "vae": [
+        "19",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "19": {
+    "inputs": {
+      "ckpt_name": "sdxl/Juggernaut-xl_v9.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "33": {
+    "inputs": {
+      "image": "girl_dino_1024.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "35": {
+    "inputs": {
+      "head": "fooocus_inpaint_head.pth",
+      "patch": "inpaint_v26.fooocus.patch"
+    },
+    "class_type": "INPAINT_LoadFooocusInpaint",
+    "_meta": {
+      "title": "Load Fooocus Inpaint"
+    }
+  },
+  "36": {
+    "inputs": {
+      "model": [
+        "19",
+        0
+      ],
+      "patch": [
+        "35",
+        0
+      ],
+      "latent": [
+        "44",
+        2
+      ]
+    },
+    "class_type": "INPAINT_ApplyFooocusInpaint",
+    "_meta": {
+      "title": "Apply Fooocus Inpaint"
+    }
+  },
+  "40": {
+    "inputs": {
+      "seed": 255436739617350,
+      "steps": 28,
+      "cfg": 6,
+      "sampler_name": "dpmpp_2m_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "36",
+        0
+      ],
+      "positive": [
+        "44",
+        0
+      ],
+      "negative": [
+        "44",
+        1
+      ],
+      "latent_image": [
+        "44",
+        3
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "44": {
+    "inputs": {
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "10",
+        0
+      ],
+      "vae": [
+        "19",
+        2
+      ],
+      "pixels": [
+        "73",
+        0
+      ],
+      "mask": [
+        "67",
+        1
+      ]
+    },
+    "class_type": "INPAINT_VAEEncodeInpaintConditioning",
+    "_meta": {
+      "title": "VAE Encode & Inpaint Conditioning"
+    }
+  },
+  "59": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "65",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "65": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "67",
+        0
+      ],
+      "source": [
+        "14",
+        0
+      ],
+      "mask": [
+        "67",
+        1
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "ImageCompositeMasked"
+    }
+  },
+  "67": {
+    "inputs": {
+      "left": 128,
+      "top": 0,
+      "right": 128,
+      "bottom": 0,
+      "feathering": 40,
+      "image": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "ImagePadForOutpaint",
+    "_meta": {
+      "title": "Pad Image for Outpainting"
+    }
+  },
+  "68": {
+    "inputs": {
+      "fill": "navier-stokes",
+      "falloff": 0,
+      "image": [
+        "67",
+        0
+      ],
+      "mask": [
+        "67",
+        1
+      ]
+    },
+    "class_type": "INPAINT_MaskedFill",
+    "_meta": {
+      "title": "Fill Masked Area"
+    }
+  },
+  "73": {
+    "inputs": {
+      "blur": 65,
+      "falloff": 0,
+      "image": [
+        "68",
+        0
+      ],
+      "mask": [
+        "67",
+        1
+      ]
+    },
+    "class_type": "INPAINT_MaskedBlur",
+    "_meta": {
+      "title": "Blur Masked Area"
+    }
+  }
+}

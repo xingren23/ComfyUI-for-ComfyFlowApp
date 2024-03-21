@@ -1,0 +1,264 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 611649314270612,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "37",
+        0
+      ],
+      "positive": [
+        "37",
+        1
+      ],
+      "negative": [
+        "37",
+        2
+      ],
+      "latent_image": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "sdxl/Juggernaut-xl_v9.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "an old man sitting, high quality\n\n",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "14": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "20": {
+    "inputs": {
+      "images": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "37": {
+    "inputs": {
+      "config": "SDXL, Background",
+      "weight": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "cond": [
+        "6",
+        0
+      ],
+      "uncond": [
+        "7",
+        0
+      ],
+      "blended_latent": [
+        "42",
+        0
+      ],
+      "latent": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "LayeredDiffusionDiffApply",
+    "_meta": {
+      "title": "Layer Diffuse Diff Apply"
+    }
+  },
+  "40": {
+    "inputs": {
+      "sd_version": "SDXL",
+      "sub_batch_size": 16,
+      "samples": [
+        "3",
+        0
+      ],
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "LayeredDiffusionDecodeRGBA",
+    "_meta": {
+      "title": "Layer Diffuse Decode (RGBA)"
+    }
+  },
+  "42": {
+    "inputs": {
+      "seed": 172827720886378,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "55",
+        0
+      ],
+      "positive": [
+        "55",
+        1
+      ],
+      "negative": [
+        "55",
+        2
+      ],
+      "latent_image": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "44": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "47": {
+    "inputs": {
+      "samples": [
+        "42",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "49": {
+    "inputs": {
+      "pixels": [
+        "50",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "50": {
+    "inputs": {
+      "image": "chair.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "55": {
+    "inputs": {
+      "config": "SDXL, Background",
+      "weight": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "cond": [
+        "6",
+        0
+      ],
+      "uncond": [
+        "7",
+        0
+      ],
+      "latent": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "LayeredDiffusionCondApply",
+    "_meta": {
+      "title": "Layer Diffuse Cond Apply"
+    }
+  },
+  "56": {
+    "inputs": {
+      "images": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}

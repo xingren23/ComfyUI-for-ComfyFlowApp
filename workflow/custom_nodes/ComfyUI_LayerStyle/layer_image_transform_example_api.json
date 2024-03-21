@@ -1,0 +1,141 @@
+{
+  "2": {
+    "inputs": {
+      "image": "1344x768_girl2.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "image": "1344x768_beach.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "11": {
+    "inputs": {
+      "x": -82,
+      "y": -191,
+      "mirror": "horizontal",
+      "scale": 1.45,
+      "aspect_ratio": 1.1400000000000001,
+      "rotate": -7.69,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: LayerImageTransform",
+    "_meta": {
+      "title": "LayerUtility: LayerImageTransform"
+    }
+  },
+  "12": {
+    "inputs": {
+      "x": -638,
+      "y": -286,
+      "mirror": "None",
+      "scale": 1.75,
+      "aspect_ratio": 1,
+      "rotate": 12.85,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0,
+      "mask": [
+        "16",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: LayerMaskTransform",
+    "_meta": {
+      "title": "LayerUtility: LayerMaskTransform"
+    }
+  },
+  "13": {
+    "inputs": {
+      "mask": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "14": {
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "16": {
+    "inputs": {
+      "sam_model": "sam_vit_h (2.56GB)",
+      "grounding_dino_model": "GroundingDINO_SwinT_OGC (694MB)",
+      "threshold": 0.3,
+      "detail_range": 16,
+      "black_point": 0.15,
+      "white_point": 0.99,
+      "process_detail": true,
+      "prompt": "subject",
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LayerMask: SegmentAnythingUltra",
+    "_meta": {
+      "title": "LayerMask: SegmentAnythingUltra"
+    }
+  },
+  "17": {
+    "inputs": {
+      "invert_mask": false,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "background_image": [
+        "7",
+        0
+      ],
+      "layer_image": [
+        "11",
+        0
+      ],
+      "layer_mask": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlend",
+    "_meta": {
+      "title": "LayerUtility: ImageBlend"
+    }
+  }
+}

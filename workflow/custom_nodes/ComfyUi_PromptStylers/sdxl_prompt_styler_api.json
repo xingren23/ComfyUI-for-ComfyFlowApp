@@ -1,0 +1,127 @@
+{
+  "1": {
+    "inputs": {
+      "text_positive": "a futureistic pop up tent in a forest",
+      "text_negative": "",
+      "style": "ads-advertising",
+      "log_prompt": true,
+      "style_positive": true,
+      "style_negative": true
+    },
+    "class_type": "SDXLPromptStyler",
+    "_meta": {
+      "title": "SDXL Prompt Styler"
+    }
+  },
+  "2": {
+    "inputs": {
+      "ckpt_name": "sdxl/Juggernaut-xl_v9.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "3": {
+    "inputs": {
+      "text": [
+        "1",
+        0
+      ],
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": [
+        "1",
+        1
+      ],
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "seed": 212644239360538,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "latent_image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "7": {
+    "inputs": {
+      "dimensions": "1024 x 1024  (square)",
+      "clip_scale": 2,
+      "batch_size": 1
+    },
+    "class_type": "SDXL Empty Latent Image (rgthree)",
+    "_meta": {
+      "title": "SDXL Empty Latent Image (rgthree)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

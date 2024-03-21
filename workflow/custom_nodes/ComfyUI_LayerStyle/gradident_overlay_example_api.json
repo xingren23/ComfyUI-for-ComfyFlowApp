@@ -1,0 +1,62 @@
+{
+  "2": {
+    "inputs": {
+      "image": "512x512bkgd.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "27": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "start_color": "#FFBF30",
+      "start_alpha": 60,
+      "end_color": "#FE0000",
+      "end_alpha": 255,
+      "angle": 0,
+      "background_image": [
+        "2",
+        0
+      ],
+      "layer_image": [
+        "15",
+        0
+      ],
+      "layer_mask": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "LayerStyle: GradientOverlay",
+    "_meta": {
+      "title": "LayerStyle: GradientOverlay"
+    }
+  }
+}

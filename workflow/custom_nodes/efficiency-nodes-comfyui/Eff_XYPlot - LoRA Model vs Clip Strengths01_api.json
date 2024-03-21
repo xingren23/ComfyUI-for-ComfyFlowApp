@@ -1,0 +1,122 @@
+{
+  "55": {
+    "inputs": {
+      "seed": 593927061734313,
+      "steps": 20,
+      "cfg": 7,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "denoise": 1,
+      "preview_method": "none",
+      "vae_decode": "true",
+      "model": [
+        "112",
+        0
+      ],
+      "positive": [
+        "112",
+        1
+      ],
+      "negative": [
+        "112",
+        2
+      ],
+      "latent_image": [
+        "112",
+        3
+      ],
+      "optional_vae": [
+        "112",
+        4
+      ],
+      "script": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "KSampler (Efficient)",
+    "_meta": {
+      "title": "KSampler (Efficient)"
+    }
+  },
+  "109": {
+    "inputs": {
+      "grid_spacing": 0,
+      "XY_flip": "False",
+      "Y_label_orientation": "Vertical",
+      "cache_models": "True",
+      "ksampler_output_image": "Plot",
+      "dependencies": [
+        "112",
+        6
+      ],
+      "X": [
+        "116",
+        0
+      ],
+      "Y": [
+        "116",
+        1
+      ]
+    },
+    "class_type": "XY Plot",
+    "_meta": {
+      "title": "XY Plot"
+    }
+  },
+  "112": {
+    "inputs": {
+      "ckpt_name": "sd15/majicmixRealistic-v7.safetensors",
+      "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors",
+      "clip_skip": -2,
+      "lora_name": "None",
+      "lora_model_strength": 1,
+      "lora_clip_strength": 1,
+      "positive": " RAW photo, a portrait photo of 20 y.o caucasian woman in ( leather suit:1.1), cute face, (smile:0.8), low neckline, silver hair, long haircut, slim body, beautiful background, (high detailed skin:1.2), 8k HD, DSLR, soft lighting, high quality, film grain, Fujifilm XT3",
+      "negative": "embedding:EasyNegative.pt",
+      "token_normalization": "none",
+      "weight_interpretation": "comfy",
+      "empty_latent_width": 640,
+      "empty_latent_height": 640,
+      "batch_size": 1
+    },
+    "class_type": "Efficient Loader",
+    "_meta": {
+      "title": "Efficient Loader"
+    }
+  },
+  "116": {
+    "inputs": {
+      "input_mode": "X: Model Strength, Y: Clip Strength",
+      "lora_name": "StickersRedmond_v15.safetensors",
+      "model_strength": 1,
+      "clip_strength": 1,
+      "X_batch_count": 4,
+      "X_batch_path": "C:\\example_folder",
+      "X_subdirectories": false,
+      "X_batch_sort": "ascending",
+      "X_first_value": 0,
+      "X_last_value": 1,
+      "Y_batch_count": 4,
+      "Y_first_value": 0,
+      "Y_last_value": 1
+    },
+    "class_type": "XY Input: LoRA Plot",
+    "_meta": {
+      "title": "XY Input: LoRA Plot"
+    }
+  },
+  "119": {
+    "inputs": {
+      "filename_prefix": "ComfyUI\\xyplot_00",
+      "images": [
+        "55",
+        5
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

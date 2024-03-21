@@ -1,0 +1,61 @@
+{
+  "2": {
+    "inputs": {
+      "image": "512x512bkgd.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "21": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "stroke_grow": 0,
+      "stroke_width": 8,
+      "blur": 0,
+      "stroke_color": "#FF0088",
+      "background_image": [
+        "2",
+        0
+      ],
+      "layer_image": [
+        "15",
+        0
+      ],
+      "layer_mask": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "LayerStyle: Stroke",
+    "_meta": {
+      "title": "LayerStyle: Stroke"
+    }
+  }
+}

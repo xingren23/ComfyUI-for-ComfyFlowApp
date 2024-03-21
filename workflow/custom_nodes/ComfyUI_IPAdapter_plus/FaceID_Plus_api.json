@@ -1,0 +1,202 @@
+{
+  "1": {
+    "inputs": {
+      "seed": 1,
+      "steps": 25,
+      "cfg": 7,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "33",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent_image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "2": {
+    "inputs": {
+      "ckpt_name": "sd15/majicmixRealistic-v7.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "3": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "closeup photo of a woman wearing a white spring dress in a garden\n\nhigh quality, diffuse light, highly detailed, 4k",
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "blurry, malformed, distorted, naked",
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "samples": [
+        "1",
+        0
+      ],
+      "vae": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "7": {
+    "inputs": {
+      "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "9": {
+    "inputs": {
+      "ipadapter_file": "ip-adapter-plus-face_sd15.safetensors"
+    },
+    "class_type": "IPAdapterModelLoader",
+    "_meta": {
+      "title": "Load IPAdapter Model"
+    }
+  },
+  "10": {
+    "inputs": {
+      "image": "girl.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "14": {
+    "inputs": {
+      "lora_name": "ipadapter/ip-adapter-faceid_sd15_lora.safetensors",
+      "strength_model": 0.6,
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "22": {
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "31": {
+    "inputs": {
+      "clip_name": "ipadapter_image_encoder_sd15.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "32": {
+    "inputs": {
+      "provider": "CPU"
+    },
+    "class_type": "InsightFaceLoader",
+    "_meta": {
+      "title": "Load InsightFace"
+    }
+  },
+  "33": {
+    "inputs": {
+      "weight": 1.2,
+      "noise": 0,
+      "weight_type": "original",
+      "start_at": 0,
+      "end_at": 1,
+      "faceid_v2": false,
+      "weight_v2": 1,
+      "unfold_batch": false,
+      "ipadapter": [
+        "9",
+        0
+      ],
+      "clip_vision": [
+        "31",
+        0
+      ],
+      "insightface": [
+        "32",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ],
+      "model": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "IPAdapterApplyFaceID",
+    "_meta": {
+      "title": "Apply IPAdapter FaceID"
+    }
+  }
+}

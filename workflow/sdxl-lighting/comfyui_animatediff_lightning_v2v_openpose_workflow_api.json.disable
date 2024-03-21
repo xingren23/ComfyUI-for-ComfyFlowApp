@@ -1,0 +1,296 @@
+{
+  "10": {
+    "inputs": {
+      "video": "girl-dancing.mp4",
+      "force_rate": 0,
+      "force_size": "Custom Height",
+      "custom_width": 512,
+      "custom_height": 1024,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "Load Video (Upload) 🎥🅥🅗🅢"
+    }
+  },
+  "13": {
+    "inputs": {
+      "frame_rate": 16,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "15",
+        0
+      ],
+      "audio": [
+        "10",
+        2
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "14": {
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageGenResolutionFromImage",
+    "_meta": {
+      "title": "Generation Resolution From Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "false",
+      "resampling": "bilinear",
+      "rescale_factor": 1,
+      "resize_width": [
+        "14",
+        0
+      ],
+      "resize_height": [
+        "14",
+        1
+      ],
+      "image": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "17": {
+    "inputs": {
+      "detect_hand": "enable",
+      "detect_body": "enable",
+      "detect_face": "enable",
+      "resolution": 256,
+      "bbox_detector": "yolox_l.onnx",
+      "pose_estimator": "dw-ll_ucoco.onnx",
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "DWPreprocessor",
+    "_meta": {
+      "title": "DWPose Estimator"
+    }
+  },
+  "18": {
+    "inputs": {
+      "ckpt_name": "sd15/toonyou_beta6.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "19": {
+    "inputs": {
+      "control_net_name": "control_v11p_sd15_openpose.pth"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "20": {
+    "inputs": {
+      "text": "A beautiful girl dancing, pink long hair, city street, tall buildings.",
+      "clip": [
+        "18",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "18",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "23": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "20",
+        0
+      ],
+      "negative": [
+        "21",
+        0
+      ],
+      "control_net": [
+        "19",
+        0
+      ],
+      "image": [
+        "15",
+        0
+      ],
+      "model_optional": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "ACN_AdvancedControlNetApply",
+    "_meta": {
+      "title": "Apply Advanced ControlNet 🛂🅐🅒🅝"
+    }
+  },
+  "24": {
+    "inputs": {
+      "model_name": "animatediff_lightning_4step_comfyui.safetensors",
+      "beta_schedule": "sqrt_linear (AnimateDiff)",
+      "model": [
+        "18",
+        0
+      ],
+      "context_options": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "ADE_AnimateDiffLoaderGen1",
+    "_meta": {
+      "title": "AnimateDiff Loader 🎭🅐🅓①"
+    }
+  },
+  "25": {
+    "inputs": {
+      "seed": 1042951941423835,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "sgm_uniform",
+      "denoise": 1,
+      "model": [
+        "23",
+        2
+      ],
+      "positive": [
+        "23",
+        0
+      ],
+      "negative": [
+        "23",
+        1
+      ],
+      "latent_image": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "28": {
+    "inputs": {
+      "per_batch": 4,
+      "samples": [
+        "25",
+        0
+      ],
+      "vae": [
+        "18",
+        2
+      ]
+    },
+    "class_type": "VHS_VAEDecodeBatched",
+    "_meta": {
+      "title": "VAE Decode Batched 🎥🅥🅗🅢"
+    }
+  },
+  "29": {
+    "inputs": {
+      "frame_rate": 16,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "28",
+        0
+      ],
+      "audio": [
+        "10",
+        2
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "31": {
+    "inputs": {
+      "context_length": 16,
+      "context_overlap": 4,
+      "fuse_method": "pyramid",
+      "use_on_equal_length": false,
+      "start_percent": 0,
+      "guarantee_steps": 1
+    },
+    "class_type": "ADE_StandardStaticContextOptions",
+    "_meta": {
+      "title": "Context Options◆Standard Static 🎭🅐🅓"
+    }
+  },
+  "33": {
+    "inputs": {
+      "width": [
+        "14",
+        0
+      ],
+      "height": [
+        "14",
+        1
+      ],
+      "batch_size": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "ADE_EmptyLatentImageLarge",
+    "_meta": {
+      "title": "Empty Latent Image (Big Batch) 🎭🅐🅓"
+    }
+  }
+}

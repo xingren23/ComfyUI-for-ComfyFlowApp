@@ -1,0 +1,94 @@
+{
+  "4": {
+    "inputs": {
+      "image": "1344x768_hair.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "26": {
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "31": {
+    "inputs": {
+      "detail_range": 8,
+      "black_point": 0.01,
+      "white_point": 0.99,
+      "process_detail": false,
+      "image": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "LayerMask: RemBgUltra",
+    "_meta": {
+      "title": "LayerMask: RemBgUltra"
+    }
+  },
+  "32": {
+    "inputs": {
+      "fill_background": true,
+      "background_color": "#0000F0",
+      "RGBA_image": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageRemoveAlpha",
+    "_meta": {
+      "title": "LayerUtility: ImageRemoveAlpha"
+    }
+  },
+  "34": {
+    "inputs": {
+      "RGB_image": [
+        "32",
+        0
+      ],
+      "mask": [
+        "31",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageCombineAlpha",
+    "_meta": {
+      "title": "LayerUtility: ImageCombineAlpha"
+    }
+  },
+  "36": {
+    "inputs": {
+      "images": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "38": {
+    "inputs": {
+      "images": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}

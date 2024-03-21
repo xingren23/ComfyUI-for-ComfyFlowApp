@@ -1,0 +1,188 @@
+{
+  "5": {
+    "inputs": {
+      "image": "768x1344_dress.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "41": {
+    "inputs": {
+      "method": "VITMatte",
+      "mask_grow": 0,
+      "fix_gap": 0,
+      "fix_threshold": 0.75,
+      "edge_erode": 50,
+      "edte_dilate": 20,
+      "black_point": 0.01,
+      "white_point": 0.99,
+      "image": [
+        "5",
+        0
+      ],
+      "mask": [
+        "55",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskEdgeUltraDetail V2",
+    "_meta": {
+      "title": "LayerMask: MaskEdgeUltraDetail V2"
+    }
+  },
+  "42": {
+    "inputs": {
+      "mask": [
+        "41",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "43": {
+    "inputs": {
+      "method": "PyMatting",
+      "mask_grow": 0,
+      "fix_gap": 0,
+      "fix_threshold": 0.75,
+      "edge_erode": 50,
+      "edte_dilate": 20,
+      "black_point": 0.01,
+      "white_point": 0.99,
+      "image": [
+        "5",
+        0
+      ],
+      "mask": [
+        "55",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskEdgeUltraDetail V2",
+    "_meta": {
+      "title": "LayerMask: MaskEdgeUltraDetail V2"
+    }
+  },
+  "44": {
+    "inputs": {
+      "mask": [
+        "43",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "45": {
+    "inputs": {
+      "method": "GuidedFilter",
+      "mask_grow": 0,
+      "fix_gap": 0,
+      "fix_threshold": 0.75,
+      "edge_erode": 50,
+      "edte_dilate": 20,
+      "black_point": 0.01,
+      "white_point": 0.99,
+      "image": [
+        "5",
+        0
+      ],
+      "mask": [
+        "55",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskEdgeUltraDetail V2",
+    "_meta": {
+      "title": "LayerMask: MaskEdgeUltraDetail V2"
+    }
+  },
+  "46": {
+    "inputs": {
+      "mask": [
+        "45",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "49": {
+    "inputs": {
+      "images": [
+        "41",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "50": {
+    "inputs": {
+      "images": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "51": {
+    "inputs": {
+      "images": [
+        "45",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "54": {
+    "inputs": {
+      "mask": [
+        "55",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "55": {
+    "inputs": {
+      "sam_model": "sam_vit_h (2.56GB)",
+      "grounding_dino_model": "GroundingDINO_SwinT_OGC (694MB)",
+      "threshold": 0.3,
+      "detail_range": 16,
+      "black_point": 0.15,
+      "white_point": 0.99,
+      "process_detail": false,
+      "prompt": "subject",
+      "image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "LayerMask: SegmentAnythingUltra",
+    "_meta": {
+      "title": "LayerMask: SegmentAnythingUltra"
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "4": {
+    "inputs": {
+      "ckpt_name": "sdxl/sd_xl_base_1-0.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "17": {
+    "inputs": {
+      "seed": 1,
+      "steps": 36,
+      "cfg": 7.5,
+      "sampler_name": "ddim",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "62",
+        0
+      ],
+      "positive": [
+        "30",
+        0
+      ],
+      "negative": [
+        "33",
+        0
+      ],
+      "latent_image": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "19": {
+    "inputs": {
+      "filename_prefix": "lllite_output",
+      "images": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "26": {
+    "inputs": {
+      "samples": [
+        "17",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "30": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 1024,
+      "target_height": 1024,
+      "text_g": "anime screen cap 1girl standing at classroom, looking at viewer, in school uniform, (solo), teen age, smile, long hair, upper body, trending on pixiv, 8k wallpaper, beautiful face",
+      "text_l": "anime screen cap 1girl standing at classroom, looking at viewer, in school uniform, (solo), teen age, smile, long hair, upper body, trending on pixiv, 8k wallpaper, beautiful face",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeSDXL",
+    "_meta": {
+      "title": "CLIPTextEncodeSDXL"
+    }
+  },
+  "33": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 1024,
+      "target_height": 1024,
+      "text_g": "nsfw, bad face, lowres, low quality, worst quality, low effort, watermark, signature, ugly, poorly drawn ",
+      "text_l": "nsfw, bad face, lowres, low quality, worst quality, low effort, watermark, signature, ugly, poorly drawn ",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeSDXL",
+    "_meta": {
+      "title": "CLIPTextEncodeSDXL"
+    }
+  },
+  "43": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "59": {
+    "inputs": {
+      "image": "female.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "61": {
+    "inputs": {
+      "upscale_method": "bilinear",
+      "width": 1024,
+      "height": 1024,
+      "crop": "center",
+      "image": [
+        "59",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "Upscale Image"
+    }
+  },
+  "62": {
+    "inputs": {
+      "model_name": "kohya_controllllite_xl_canny.safetensors",
+      "strength": 1,
+      "steps": 0,
+      "start_percent": 0,
+      "end_percent": 0,
+      "model": [
+        "4",
+        0
+      ],
+      "cond_image": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "LLLiteLoader",
+    "_meta": {
+      "title": "Load LLLite"
+    }
+  }
+}

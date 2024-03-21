@@ -1,0 +1,203 @@
+{
+  "4": {
+    "inputs": {
+      "ckpt_name": "sd15/DreamShaper_v8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "12",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "12": {
+    "inputs": {
+      "add_noise": "disable",
+      "noise_seed": 0,
+      "steps": 25,
+      "cfg": 8,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "start_at_step": 0,
+      "end_at_step": 25,
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "KSampler (Advanced)"
+    }
+  },
+  "33": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 2
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "34": {
+    "inputs": {
+      "source": "CPU",
+      "seed": 0,
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "BNK_NoisyLatentImage",
+    "_meta": {
+      "title": "Noisy Latent Image"
+    }
+  },
+  "35": {
+    "inputs": {
+      "source": "CPU",
+      "seed": 1,
+      "width": 512,
+      "height": 512,
+      "batch_size": 4
+    },
+    "class_type": "BNK_NoisyLatentImage",
+    "_meta": {
+      "title": "Noisy Latent Image"
+    }
+  },
+  "36": {
+    "inputs": {
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "steps": 25,
+      "start_at_step": 0,
+      "end_at_step": 25,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "BNK_GetSigma",
+    "_meta": {
+      "title": "Get Sigma"
+    }
+  },
+  "38": {
+    "inputs": {
+      "factor": 0.05,
+      "latents1": [
+        "40",
+        0
+      ],
+      "latents2": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "BNK_SlerpLatent",
+    "_meta": {
+      "title": "Slerp Latents"
+    }
+  },
+  "39": {
+    "inputs": {
+      "strength": [
+        "36",
+        0
+      ],
+      "latents": [
+        "33",
+        0
+      ],
+      "noise": [
+        "38",
+        0
+      ]
+    },
+    "class_type": "BNK_InjectNoise",
+    "_meta": {
+      "title": "Inject Noise"
+    }
+  },
+  "40": {
+    "inputs": {
+      "multiply_by": 1,
+      "latents": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "VHS_DuplicateLatents",
+    "_meta": {
+      "title": "Duplicate Latent Batch 🎥🅥🅗🅢"
+    }
+  }
+}

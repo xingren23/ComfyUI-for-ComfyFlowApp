@@ -1,0 +1,143 @@
+{
+  "5": {
+    "inputs": {
+      "image": "768x1344_dress.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "57": {
+    "inputs": {
+      "sam_model": "sam_vit_h (2.56GB)",
+      "grounding_dino_model": "GroundingDINO_SwinT_OGC (694MB)",
+      "threshold": 0.3,
+      "detail_method": "VITMatte",
+      "detail_erode": 90,
+      "detail_dilate": 10,
+      "black_point": 0.01,
+      "white_point": 0.88,
+      "process_detail": true,
+      "prompt": "subject",
+      "image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "LayerMask: SegmentAnythingUltra V2",
+    "_meta": {
+      "title": "LayerMask: SegmentAnythingUltra V2"
+    }
+  },
+  "72": {
+    "inputs": {
+      "image": "768x1344_beach.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "73": {
+    "inputs": {
+      "images": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "77": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "background_image": [
+        "72",
+        0
+      ],
+      "layer_image": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlend",
+    "_meta": {
+      "title": "LayerUtility: ImageBlend"
+    }
+  },
+  "78": {
+    "inputs": {
+      "mask": [
+        "57",
+        1
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "79": {
+    "inputs": {
+      "face": true,
+      "hair": true,
+      "body": false,
+      "clothes": true,
+      "accessories": false,
+      "background": false,
+      "confidence": 0.55,
+      "detail_method": "GuidedFilter",
+      "detail_erode": 4,
+      "detail_dilate": 18,
+      "black_point": 0.65,
+      "white_point": 0.99,
+      "process_detail": true,
+      "images": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "LayerMask: PersonMaskUltra V2",
+    "_meta": {
+      "title": "LayerMask: PersonMaskUltra V2"
+    }
+  },
+  "80": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "background_image": [
+        "77",
+        0
+      ],
+      "layer_image": [
+        "79",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlend",
+    "_meta": {
+      "title": "LayerUtility: ImageBlend"
+    }
+  },
+  "81": {
+    "inputs": {
+      "mask": [
+        "79",
+        1
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  }
+}

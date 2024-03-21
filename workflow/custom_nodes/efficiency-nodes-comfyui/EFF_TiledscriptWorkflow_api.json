@@ -1,0 +1,93 @@
+{
+  "55": {
+    "inputs": {
+      "seed": 1046036195170979,
+      "steps": 30,
+      "cfg": 6,
+      "sampler_name": "dpmpp_2m_sde",
+      "scheduler": "karras",
+      "denoise": 1,
+      "preview_method": "none",
+      "vae_decode": "true",
+      "model": [
+        "110",
+        0
+      ],
+      "positive": [
+        "110",
+        1
+      ],
+      "negative": [
+        "110",
+        2
+      ],
+      "latent_image": [
+        "110",
+        3
+      ],
+      "optional_vae": [
+        "110",
+        4
+      ],
+      "script": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "KSampler (Efficient)",
+    "_meta": {
+      "title": "KSampler (Efficient)"
+    }
+  },
+  "110": {
+    "inputs": {
+      "ckpt_name": "sd15/v1-5.safetensors",
+      "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors",
+      "clip_skip": -2,
+      "lora_name": "None",
+      "lora_model_strength": 1,
+      "lora_clip_strength": 1,
+      "positive": "Large Moss beast redwood forest landscape realistic painting 8k resolution deviantart oil on canvas Unreal Engine volumetric lighting detailed painting trending on art station",
+      "negative": "embedding:EasyNegative.pt, , lowres, low quality, worst quality, people, watermarks, white space, embedding:bad-image-v2-39000.pt",
+      "token_normalization": "none",
+      "weight_interpretation": "comfy++",
+      "empty_latent_width": 768,
+      "empty_latent_height": 512,
+      "batch_size": 1
+    },
+    "class_type": "Efficient Loader",
+    "_meta": {
+      "title": "Efficient Loader"
+    }
+  },
+  "127": {
+    "inputs": {
+      "filename_prefix": "ComfyUI\\eff_tile_00",
+      "images": [
+        "55",
+        5
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "129": {
+    "inputs": {
+      "upscale_by": 1.25,
+      "tile_size": 512,
+      "tiling_strategy": "random",
+      "tiling_steps": 12,
+      "seed": 791565191227442,
+      "denoise": 0.4,
+      "use_controlnet": true,
+      "tile_controlnet": "control_v11f1e_sd15_tile.pth",
+      "strength": 1
+    },
+    "class_type": "Tiled Upscaler Script",
+    "_meta": {
+      "title": "Tiled Upscaler Script"
+    }
+  }
+}

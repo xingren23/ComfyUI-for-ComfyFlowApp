@@ -1,0 +1,155 @@
+{
+  "4": {
+    "inputs": {
+      "ckpt_name": "sd15/v1-5.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "12",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "12": {
+    "inputs": {
+      "add_noise": "disable",
+      "noise_seed": 0,
+      "steps": 25,
+      "cfg": 1,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "start_at_step": 0,
+      "end_at_step": 25,
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "KSampler (Advanced)"
+    }
+  },
+  "19": {
+    "inputs": {
+      "image": "background_512_512.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "20": {
+    "inputs": {
+      "pixels": [
+        "19",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "27": {
+    "inputs": {
+      "steps": 25,
+      "end_at_step": 0,
+      "cfg": 1,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "normalize": "disable",
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "BNK_Unsampler",
+    "_meta": {
+      "title": "Unsampler"
+    }
+  }
+}

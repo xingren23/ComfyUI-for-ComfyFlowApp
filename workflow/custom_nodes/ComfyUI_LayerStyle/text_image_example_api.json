@@ -1,0 +1,74 @@
+{
+  "10": {
+    "inputs": {
+      "image": "512x512bkgd.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "11": {
+    "inputs": {
+      "invert_mask": false,
+      "blend_mode": "normal",
+      "opacity": 46,
+      "distance_x": 3,
+      "distance_y": 3,
+      "grow": 4,
+      "blur": 12,
+      "shadow_color": "#000000",
+      "background_image": [
+        "10",
+        0
+      ],
+      "layer_image": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "LayerStyle: DropShadow",
+    "_meta": {
+      "title": "LayerStyle: DropShadow"
+    }
+  },
+  "12": {
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "28": {
+    "inputs": {
+      "text": "鸿雁长飞光不度，\n 鱼龙潜跃水成文。",
+      "font_file": "Alibaba-PuHuiTi-Heavy.ttf",
+      "spacing": -20,
+      "leading": 0,
+      "horizontal_border": 36,
+      "vertical_border": 5,
+      "scale": 80,
+      "variation_range": 24,
+      "variation_seed": 1707317113,
+      "layout": "vertical",
+      "width": 512,
+      "height": 512,
+      "text_color": "#000020",
+      "background_color": "#FFFFFF",
+      "size_as": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: TextImage",
+    "_meta": {
+      "title": "LayerUtility: TextImage"
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 99251224253967,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "21",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "sd15/DreamShaper_v8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 6
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "A dog sitting in a cozy room",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "14": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "21": {
+    "inputs": {
+      "config": "SD15, attn_sharing, Batch size (3N)",
+      "model": [
+        "4",
+        0
+      ],
+      "fg_cond": [
+        "26",
+        0
+      ],
+      "bg_cond": [
+        "27",
+        0
+      ],
+      "blended_cond": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "LayeredDiffusionJointApply",
+    "_meta": {
+      "title": "Layer Diffuse Joint Apply"
+    }
+  },
+  "22": {
+    "inputs": {
+      "frames": 3,
+      "sd_version": "SD15",
+      "sub_batch_size": 16,
+      "samples": [
+        "3",
+        0
+      ],
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "LayeredDiffusionDecodeSplit",
+    "_meta": {
+      "title": "Layer Diffuse Decode (Split)"
+    }
+  },
+  "23": {
+    "inputs": {
+      "images": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "24": {
+    "inputs": {
+      "images": [
+        "22",
+        1
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "25": {
+    "inputs": {
+      "images": [
+        "22",
+        2
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "26": {
+    "inputs": {
+      "text": "a sitting dog",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "27": {
+    "inputs": {
+      "text": "a cozy room",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  }
+}

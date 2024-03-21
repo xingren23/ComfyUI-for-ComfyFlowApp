@@ -1,0 +1,159 @@
+{
+  "2": {
+    "inputs": {
+      "image": "3840x2160car.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "18": {
+    "inputs": {
+      "images": [
+        "29",
+        3
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "22": {
+    "inputs": {
+      "mask": [
+        "29",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "26": {
+    "inputs": {
+      "invert_mask": false,
+      "background_image": [
+        "2",
+        0
+      ],
+      "croped_image": [
+        "36",
+        0
+      ],
+      "croped_mask": [
+        "29",
+        1
+      ],
+      "crop_box": [
+        "29",
+        2
+      ]
+    },
+    "class_type": "LayerUtility: RestoreCropBox",
+    "_meta": {
+      "title": "LayerUtility: RestoreCropBox"
+    }
+  },
+  "27": {
+    "inputs": {
+      "images": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "29": {
+    "inputs": {
+      "invert_mask": false,
+      "detect": "min_bounding_rect",
+      "top_reserve": 20,
+      "bottom_reserve": 20,
+      "left_reserve": 20,
+      "right_reserve": 20,
+      "image": [
+        "38",
+        0
+      ],
+      "mask_for_crop": [
+        "38",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: CropByMask",
+    "_meta": {
+      "title": "LayerUtility: CropByMask"
+    }
+  },
+  "35": {
+    "inputs": {
+      "scale": 2.5,
+      "method": "lanczos",
+      "scale_by_longest_side": false,
+      "longest_side": 1024,
+      "image": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageScaleRestore",
+    "_meta": {
+      "title": "LayerUtility: ImageScaleRestore"
+    }
+  },
+  "36": {
+    "inputs": {
+      "scale": 1,
+      "method": "lanczos",
+      "scale_by_longest_side": false,
+      "longest_side": 1024,
+      "image": [
+        "35",
+        0
+      ],
+      "original_size": [
+        "35",
+        2
+      ]
+    },
+    "class_type": "LayerUtility: ImageScaleRestore",
+    "_meta": {
+      "title": "LayerUtility: ImageScaleRestore"
+    }
+  },
+  "38": {
+    "inputs": {
+      "detail_range": 8,
+      "black_point": 0.01,
+      "white_point": 0.99,
+      "process_detail": false,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LayerMask: RemBgUltra",
+    "_meta": {
+      "title": "LayerMask: RemBgUltra"
+    }
+  }
+}

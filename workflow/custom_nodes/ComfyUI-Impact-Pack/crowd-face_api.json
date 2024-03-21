@@ -1,0 +1,321 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 1093710878336636,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "sd15/DreamShaper_v8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 1024,
+      "height": 768,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "1girl is walking through street, multiple peoples",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ],
+      "vae": [
+        "4",
+        2
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ToBasicPipe",
+    "_meta": {
+      "title": "ToBasicPipe"
+    }
+  },
+  "19": {
+    "inputs": {
+      "bbox_threshold": 0.5,
+      "bbox_dilation": 0,
+      "crop_factor": 3,
+      "drop_size": 10,
+      "sub_threshold": 0.5,
+      "sub_dilation": 0,
+      "sub_bbox_expansion": 0,
+      "sam_mask_hint_threshold": 0.7,
+      "post_dilation": 0,
+      "bbox_detector": [
+        "20",
+        0
+      ],
+      "image": [
+        "8",
+        0
+      ],
+      "sam_model_opt": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "ImpactSimpleDetectorSEGS",
+    "_meta": {
+      "title": "Simple Detector (SEGS)"
+    }
+  },
+  "20": {
+    "inputs": {
+      "model_name": "bbox/face_yolov8m.pt"
+    },
+    "class_type": "UltralyticsDetectorProvider",
+    "_meta": {
+      "title": "UltralyticsDetectorProvider"
+    }
+  },
+  "21": {
+    "inputs": {
+      "model_name": "sam_vit_b_01ec64.pth",
+      "device_mode": "AUTO"
+    },
+    "class_type": "SAMLoader",
+    "_meta": {
+      "title": "SAMLoader (Impact)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "guide_size": 360,
+      "guide_size_for": true,
+      "max_size": 768,
+      "seed": 284940296179092,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.4,
+      "feather": 5,
+      "noise_mask": true,
+      "force_inpaint": true,
+      "wildcard": "detailed eyes, { faint smile | laugh }, { caucasian | latin | german | anglo-saxon | russian | hispanic | 20::african }, beautiful, { 30 | 25 | 20 | 18 } years old, { bluish | dark green | black | gray | brown } eyes",
+      "refiner_ratio": 0.2,
+      "cycle": 1,
+      "inpaint_model": false,
+      "noise_mask_feather": 20,
+      "image": [
+        "8",
+        0
+      ],
+      "segs": [
+        "43",
+        0
+      ],
+      "basic_pipe": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "DetailerForEachDebugPipe",
+    "_meta": {
+      "title": "DetailerDebug (SEGS/pipe)"
+    }
+  },
+  "23": {
+    "inputs": {
+      "images": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "24": {
+    "inputs": {
+      "images": [
+        "22",
+        3
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "31": {
+    "inputs": {
+      "guide_size": 180,
+      "guide_size_for": true,
+      "max_size": 768,
+      "seed": 284940296179092,
+      "steps": 5,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.5,
+      "feather": 5,
+      "noise_mask": true,
+      "force_inpaint": true,
+      "wildcard": "faceless:5.0",
+      "refiner_ratio": 0.2,
+      "cycle": 1,
+      "inpaint_model": false,
+      "noise_mask_feather": 20,
+      "image": [
+        "22",
+        0
+      ],
+      "segs": [
+        "43",
+        1
+      ],
+      "basic_pipe": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "DetailerForEachDebugPipe",
+    "_meta": {
+      "title": "DetailerDebug (SEGS/pipe)"
+    }
+  },
+  "33": {
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "35": {
+    "inputs": {
+      "images": [
+        "31",
+        3
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "43": {
+    "inputs": {
+      "target": "area(=w*h)",
+      "order": true,
+      "take_start": 0,
+      "take_count": 2,
+      "segs": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "ImpactSEGSOrderedFilter",
+    "_meta": {
+      "title": "SEGS Filter (ordered)"
+    }
+  }
+}

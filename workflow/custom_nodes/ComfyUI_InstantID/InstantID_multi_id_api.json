@@ -1,0 +1,369 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 1631594039,
+      "steps": 30,
+      "cfg": 4.5,
+      "sampler_name": "ddpm",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "77",
+        0
+      ],
+      "positive": [
+        "79",
+        0
+      ],
+      "negative": [
+        "80",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "sdxl/Juggernaut-xl_v9.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 1280,
+      "height": 960,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "11": {
+    "inputs": {
+      "instantid_file": "ip-adapter.bin"
+    },
+    "class_type": "InstantIDModelLoader",
+    "_meta": {
+      "title": "Load InstantID Model"
+    }
+  },
+  "13": {
+    "inputs": {
+      "image": "female.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "16": {
+    "inputs": {
+      "control_net_name": "instantid-controlnet.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "38": {
+    "inputs": {
+      "provider": "CPU"
+    },
+    "class_type": "InstantIDFaceAnalysis",
+    "_meta": {
+      "title": "InstantID Face Analysis"
+    }
+  },
+  "39": {
+    "inputs": {
+      "text": "comic female character. graphic illustration, comic art, graphic novel art, vibrant, highly detailed. New York background",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "40": {
+    "inputs": {
+      "text": "photograph, deformed, glitch, noisy, realistic, stock photo, naked",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "60": {
+    "inputs": {
+      "weight": 0.9,
+      "start_at": 0,
+      "end_at": 1,
+      "instantid": [
+        "11",
+        0
+      ],
+      "insightface": [
+        "38",
+        0
+      ],
+      "control_net": [
+        "16",
+        0
+      ],
+      "image": [
+        "13",
+        0
+      ],
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "39",
+        0
+      ],
+      "negative": [
+        "40",
+        0
+      ],
+      "image_kps": [
+        "82",
+        0
+      ],
+      "mask": [
+        "87",
+        0
+      ]
+    },
+    "class_type": "ApplyInstantID",
+    "_meta": {
+      "title": "Apply InstantID"
+    }
+  },
+  "77": {
+    "inputs": {
+      "weight": 0.8,
+      "start_at": 0,
+      "end_at": 1,
+      "instantid": [
+        "11",
+        0
+      ],
+      "insightface": [
+        "38",
+        0
+      ],
+      "control_net": [
+        "16",
+        0
+      ],
+      "image": [
+        "78",
+        0
+      ],
+      "model": [
+        "60",
+        0
+      ],
+      "positive": [
+        "89",
+        0
+      ],
+      "negative": [
+        "40",
+        0
+      ],
+      "image_kps": [
+        "84",
+        0
+      ],
+      "mask": [
+        "88",
+        0
+      ]
+    },
+    "class_type": "ApplyInstantID",
+    "_meta": {
+      "title": "Apply InstantID"
+    }
+  },
+  "78": {
+    "inputs": {
+      "image": "malepng.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "79": {
+    "inputs": {
+      "conditioning_1": [
+        "77",
+        1
+      ],
+      "conditioning_2": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "Conditioning (Combine)"
+    }
+  },
+  "80": {
+    "inputs": {
+      "conditioning_1": [
+        "77",
+        2
+      ],
+      "conditioning_2": [
+        "60",
+        2
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "Conditioning (Combine)"
+    }
+  },
+  "82": {
+    "inputs": {
+      "image": "pose2.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "84": {
+    "inputs": {
+      "axis": "x",
+      "image": [
+        "82",
+        0
+      ]
+    },
+    "class_type": "ImageFlip+",
+    "_meta": {
+      "title": "🔧 Image Flip"
+    }
+  },
+  "85": {
+    "inputs": {
+      "value": 0,
+      "width": 1280,
+      "height": 960
+    },
+    "class_type": "SolidMask",
+    "_meta": {
+      "title": "SolidMask"
+    }
+  },
+  "86": {
+    "inputs": {
+      "value": 1,
+      "width": 640,
+      "height": 960
+    },
+    "class_type": "SolidMask",
+    "_meta": {
+      "title": "SolidMask"
+    }
+  },
+  "87": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "add",
+      "destination": [
+        "85",
+        0
+      ],
+      "source": [
+        "86",
+        0
+      ]
+    },
+    "class_type": "MaskComposite",
+    "_meta": {
+      "title": "MaskComposite"
+    }
+  },
+  "88": {
+    "inputs": {
+      "axis": "x",
+      "mask": [
+        "87",
+        0
+      ]
+    },
+    "class_type": "MaskFlip+",
+    "_meta": {
+      "title": "🔧 Mask Flip"
+    }
+  },
+  "89": {
+    "inputs": {
+      "text": "comic male character. graphic illustration, comic art, graphic novel art, vibrant, highly detailed. New York background",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "2": {
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "image": "1344x768_beach.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 75,
+      "distance_x": 8,
+      "distance_y": 8,
+      "grow": 2,
+      "blur": 8,
+      "shadow_color": "#000000",
+      "background_image": [
+        "4",
+        0
+      ],
+      "layer_image": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "LayerStyle: DropShadow",
+    "_meta": {
+      "title": "LayerStyle: DropShadow"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": "Are you going to Scarborough Fair?\nParsley, sage, rosemary, and thyme.\nRemember me to one who lives there,\nShe once was the true love of mine.",
+      "font_file": "Alibaba-PuHuiTi-Heavy.ttf",
+      "align": "center",
+      "char_per_line": 80,
+      "leading": 8,
+      "font_size": 52,
+      "text_color": "#FFFFFF",
+      "stroke_width": 0,
+      "stroke_color": "#FF8000",
+      "x_offset": 0,
+      "y_offset": 300,
+      "width": 512,
+      "height": 512,
+      "size_as": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: SimpleTextImage",
+    "_meta": {
+      "title": "LayerUtility: SimpleTextImage"
+    }
+  },
+  "10": {
+    "inputs": {
+      "text": "Scarborough Fair",
+      "font_file": "Alibaba-PuHuiTi-Heavy.ttf",
+      "align": "center",
+      "char_per_line": 80,
+      "leading": 8,
+      "font_size": 108,
+      "text_color": "#FFE080",
+      "stroke_width": 0,
+      "stroke_color": "#FF8000",
+      "x_offset": 0,
+      "y_offset": 120,
+      "width": 512,
+      "height": 512,
+      "size_as": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: SimpleTextImage",
+    "_meta": {
+      "title": "LayerUtility: SimpleTextImage"
+    }
+  },
+  "11": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 75,
+      "distance_x": 8,
+      "distance_y": 8,
+      "grow": 2,
+      "blur": 8,
+      "shadow_color": "#000000",
+      "background_image": [
+        "7",
+        0
+      ],
+      "layer_image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerStyle: DropShadow",
+    "_meta": {
+      "title": "LayerStyle: DropShadow"
+    }
+  }
+}

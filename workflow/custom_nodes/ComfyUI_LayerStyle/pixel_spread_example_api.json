@@ -1,0 +1,70 @@
+{
+  "39": {
+    "inputs": {
+      "image": "1344x768_hair.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "41": {
+    "inputs": {
+      "mask": [
+        "44",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "42": {
+    "inputs": {
+      "images": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "44": {
+    "inputs": {
+      "detail_range": 10,
+      "black_point": 0.01,
+      "white_point": 0.99,
+      "process_detail": true,
+      "image": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "LayerMask: RemBgUltra",
+    "_meta": {
+      "title": "LayerMask: RemBgUltra"
+    }
+  },
+  "46": {
+    "inputs": {
+      "invert_mask": false,
+      "mask_grow": 0,
+      "image": [
+        "39",
+        0
+      ],
+      "mask": [
+        "44",
+        1
+      ]
+    },
+    "class_type": "LayerMask: PixelSpread",
+    "_meta": {
+      "title": "LayerMask: PixelSpread"
+    }
+  }
+}

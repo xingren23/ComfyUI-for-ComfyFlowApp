@@ -1,0 +1,497 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 1111663225825007,
+      "steps": 35,
+      "cfg": 8,
+      "sampler_name": "dpmpp_3m_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "22",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "sdxl/Juggernaut-xl_v9.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "29",
+        0
+      ],
+      "clip": [
+        "12",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": [
+        "29",
+        1
+      ],
+      "clip": [
+        "12",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "arty\\00",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "12": {
+    "inputs": {
+      "lora_name": "StickersRedmond_sdxl.safetensors",
+      "strength_model": 1.5,
+      "strength_clip": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "22": {
+    "inputs": {
+      "b1": 1.3,
+      "b2": 1.4,
+      "s1": 0.9,
+      "s2": 0.2,
+      "model": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "FreeU_V2",
+    "_meta": {
+      "title": "FreeU_V2"
+    }
+  },
+  "24": {
+    "inputs": {
+      "switch_1": "On",
+      "upscale_model_1": "RealESRGAN_x2plus.pth",
+      "rescale_factor_1": 1,
+      "switch_2": "On",
+      "upscale_model_2": "RealESRGAN_x2plus.pth",
+      "rescale_factor_2": 1,
+      "switch_3": "On",
+      "upscale_model_3": "RealESRGAN_x4plus.pth",
+      "rescale_factor_3": 2
+    },
+    "class_type": "CR Multi Upscale Stack",
+    "_meta": {
+      "title": "🔍 CR Multi Upscale Stack"
+    }
+  },
+  "25": {
+    "inputs": {
+      "resampling_method": "lanczos",
+      "supersample": "true",
+      "rounding_modulus": 8,
+      "image": [
+        "8",
+        0
+      ],
+      "upscale_stack": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "CR Apply Multi Upscale",
+    "_meta": {
+      "title": "🔍 CR Apply Multi Upscale"
+    }
+  },
+  "27": {
+    "inputs": {
+      "filename_prefix": "arty\\up_00",
+      "images": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "29": {
+    "inputs": {
+      "text_positive": "(delightful princess:1. 1), (gloomy illumination, insane, stunning, dramatic, completed artwork, HQ:1. 1), (ornamental filigree expression  , Dan mumford style:1. 2), sinewy facial patterns, hieroglyph, glitch art, neon, floral patterns, hieroglyph, glitch art, face symmetry, masterpiece, award - winning, sharp focus, intricate concept art, ambient lighting, artstation, pixiv, (astronaut), cosmic, galaxy, moon, UHD, HDR,",
+      "text_negative": "text, watermark, deformed body, deformed face, extra limbs, extra fingers, fused fingered, fuzzy",
+      "style": "sai-cinematic",
+      "log_prompt": false,
+      "style_positive": true,
+      "style_negative": true
+    },
+    "class_type": "SDXLPromptStyler",
+    "_meta": {
+      "title": "SDXL Prompt Styler"
+    }
+  },
+  "32": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": 426427666665571,
+      "steps": 35,
+      "cfg": 8,
+      "sampler_name": "dpmpp_3m_sde_gpu",
+      "scheduler": "karras",
+      "start_at_step": 0,
+      "end_at_step": 10000,
+      "return_with_leftover_noise": "disable",
+      "preview_method": "auto",
+      "vae_decode": "true",
+      "model": [
+        "22",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "55",
+        0
+      ],
+      "optional_vae": [
+        "4",
+        2
+      ],
+      "script": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "KSampler Adv. (Efficient)",
+    "_meta": {
+      "title": "KSampler Adv. (Efficient)"
+    }
+  },
+  "33": {
+    "inputs": {
+      "noise_seed": 1119555229941549,
+      "steps": 30,
+      "cfg": 8,
+      "sampler_name": "dpmpp_3m_sde_gpu",
+      "scheduler": "karras",
+      "start_at_step": 0,
+      "refine_at_step": -1,
+      "preview_method": "auto",
+      "vae_decode": "true",
+      "sdxl_tuple": [
+        "46",
+        0
+      ],
+      "latent_image": [
+        "55",
+        0
+      ],
+      "optional_vae": [
+        "4",
+        2
+      ],
+      "script": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "KSampler SDXL (Eff.)",
+    "_meta": {
+      "title": "KSampler SDXL (Eff.)"
+    }
+  },
+  "40": {
+    "inputs": {
+      "samples": [
+        "32",
+        3
+      ],
+      "vae": [
+        "32",
+        4
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "41": {
+    "inputs": {
+      "filename_prefix": "arty\\ADV00",
+      "images": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "42": {
+    "inputs": {
+      "switch_1": "On",
+      "upscale_model_1": "RealESRGAN_x2plus.pth",
+      "rescale_factor_1": 1,
+      "switch_2": "On",
+      "upscale_model_2": "RealESRGAN_x2plus.pth",
+      "rescale_factor_2": 1,
+      "switch_3": "On",
+      "upscale_model_3": "RealESRGAN_x4plus.pth",
+      "rescale_factor_3": 2
+    },
+    "class_type": "CR Multi Upscale Stack",
+    "_meta": {
+      "title": "🔍 CR Multi Upscale Stack"
+    }
+  },
+  "43": {
+    "inputs": {
+      "resampling_method": "lanczos",
+      "supersample": "true",
+      "rounding_modulus": 8,
+      "image": [
+        "40",
+        0
+      ],
+      "upscale_stack": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "CR Apply Multi Upscale",
+    "_meta": {
+      "title": "🔍 CR Apply Multi Upscale"
+    }
+  },
+  "44": {
+    "inputs": {
+      "filename_prefix": "arty\\ADVup_00",
+      "images": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "46": {
+    "inputs": {
+      "base_model": [
+        "22",
+        0
+      ],
+      "base_clip": [
+        "12",
+        1
+      ],
+      "base_positive": [
+        "6",
+        0
+      ],
+      "base_negative": [
+        "7",
+        0
+      ],
+      "refiner_model": [
+        "22",
+        0
+      ],
+      "refiner_clip": [
+        "12",
+        1
+      ],
+      "refiner_positive": [
+        "6",
+        0
+      ],
+      "refiner_negative": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "Pack SDXL Tuple",
+    "_meta": {
+      "title": "Pack SDXL Tuple"
+    }
+  },
+  "48": {
+    "inputs": {
+      "filename_prefix": "arty\\SDXL_00",
+      "images": [
+        "33",
+        3
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "49": {
+    "inputs": {
+      "filename_prefix": "arty\\SDXL_up_00",
+      "images": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "50": {
+    "inputs": {
+      "resampling_method": "lanczos",
+      "supersample": "true",
+      "rounding_modulus": 8,
+      "image": [
+        "33",
+        3
+      ],
+      "upscale_stack": [
+        "51",
+        0
+      ]
+    },
+    "class_type": "CR Apply Multi Upscale",
+    "_meta": {
+      "title": "🔍 CR Apply Multi Upscale"
+    }
+  },
+  "51": {
+    "inputs": {
+      "switch_1": "On",
+      "upscale_model_1": "RealESRGAN_x2plus.pth",
+      "rescale_factor_1": 1,
+      "switch_2": "On",
+      "upscale_model_2": "RealESRGAN_x2plus.pth",
+      "rescale_factor_2": 1,
+      "switch_3": "On",
+      "upscale_model_3": "RealESRNet_x4plus.pth",
+      "rescale_factor_3": 2
+    },
+    "class_type": "CR Multi Upscale Stack",
+    "_meta": {
+      "title": "🔍 CR Multi Upscale Stack"
+    }
+  },
+  "52": {
+    "inputs": {
+      "rng_source": "gpu",
+      "cfg_denoiser": false,
+      "add_seed_noise": true,
+      "seed": 231506469238924,
+      "weight": 0.015
+    },
+    "class_type": "Noise Control Script",
+    "_meta": {
+      "title": "Noise Control Script"
+    }
+  },
+  "54": {
+    "inputs": {
+      "upscale_by": 1.2,
+      "tile_size": 512,
+      "tiling_strategy": "random",
+      "tiling_steps": 5,
+      "seed": 1017397082333840,
+      "denoise": 0.4,
+      "use_controlnet": false,
+      "tile_controlnet": "control_v11f1e_sd15_tile.bin",
+      "strength": 1
+    },
+    "class_type": "Tiled Upscaler Script",
+    "_meta": {
+      "title": "Tiled Upscaler Script"
+    }
+  },
+  "55": {
+    "inputs": {
+      "dimensions": "1024 x 1024  (square)",
+      "clip_scale": 2,
+      "batch_size": 1
+    },
+    "class_type": "SDXL Empty Latent Image (rgthree)",
+    "_meta": {
+      "title": "SDXL Empty Latent Image (rgthree)"
+    }
+  }
+}

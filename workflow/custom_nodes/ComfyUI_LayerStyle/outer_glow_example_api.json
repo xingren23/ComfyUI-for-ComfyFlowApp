@@ -1,0 +1,62 @@
+{
+  "2": {
+    "inputs": {
+      "image": "512x512bkgd.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "21": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "screen",
+      "opacity": 100,
+      "brightness": 5,
+      "glow_range": 48,
+      "blur": 25,
+      "light_color": "#FFBF30",
+      "glow_color": "#FE0000",
+      "background_image": [
+        "2",
+        0
+      ],
+      "layer_image": [
+        "15",
+        0
+      ],
+      "layer_mask": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "LayerStyle: OuterGlow",
+    "_meta": {
+      "title": "LayerStyle: OuterGlow"
+    }
+  }
+}

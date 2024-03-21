@@ -1,0 +1,306 @@
+{
+  "55": {
+    "inputs": {
+      "seed": 97627656461341,
+      "steps": 24,
+      "cfg": 7,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "denoise": 1,
+      "preview_method": "auto",
+      "vae_decode": "true",
+      "model": [
+        "112",
+        0
+      ],
+      "positive": [
+        "112",
+        1
+      ],
+      "negative": [
+        "112",
+        2
+      ],
+      "latent_image": [
+        "112",
+        3
+      ],
+      "optional_vae": [
+        "112",
+        4
+      ],
+      "script": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "KSampler (Efficient)",
+    "_meta": {
+      "title": "KSampler (Efficient)"
+    }
+  },
+  "109": {
+    "inputs": {
+      "grid_spacing": 0,
+      "XY_flip": "True",
+      "Y_label_orientation": "Vertical",
+      "cache_models": "True",
+      "ksampler_output_image": "Images",
+      "dependencies": [
+        "112",
+        6
+      ],
+      "X": [
+        "114",
+        0
+      ],
+      "Y": [
+        "111",
+        0
+      ]
+    },
+    "class_type": "XY Plot",
+    "_meta": {
+      "title": "XY Plot"
+    }
+  },
+  "111": {
+    "inputs": {
+      "batch_count": 3
+    },
+    "class_type": "XY Input: Seeds++ Batch",
+    "_meta": {
+      "title": "XY Input: Seeds++ Batch"
+    }
+  },
+  "112": {
+    "inputs": {
+      "ckpt_name": "sd15/DreamShaper_v8.safetensors",
+      "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors",
+      "clip_skip": -2,
+      "lora_name": "StickersRedmond_v15.safetensors",
+      "lora_model_strength": 0.4,
+      "lora_clip_strength": 0.4,
+      "positive": "masterpiece, best quality, haunted theme park, haunted by chibi ghosts, cute, whimsical, glow, glowing, fun, silly, mystical, closeup",
+      "negative": "embedding:EasyNegative.pt, embedding:bad-artist-anime.pt, lowres, NSFW, (worst quality, low quality)",
+      "token_normalization": "length+mean",
+      "weight_interpretation": "A1111",
+      "empty_latent_width": 512,
+      "empty_latent_height": 512,
+      "batch_size": 1
+    },
+    "class_type": "Efficient Loader",
+    "_meta": {
+      "title": "Efficient Loader"
+    }
+  },
+  "114": {
+    "inputs": {
+      "target_ckpt": "Base",
+      "input_mode": "Ckpt Names",
+      "batch_path": "C:\\example_folder",
+      "subdirectories": false,
+      "batch_sort": "ascending",
+      "batch_max": -1,
+      "ckpt_count": 2,
+      "ckpt_name_1": "sd15/sakuramix_v70.safetensors",
+      "clip_skip_1": -1,
+      "vae_name_1": "Baked VAE",
+      "ckpt_name_2": "sd15/v1-5.safetensors",
+      "clip_skip_2": -1,
+      "vae_name_2": "Baked VAE",
+      "ckpt_name_3": "None",
+      "clip_skip_3": -1,
+      "vae_name_3": "Baked VAE",
+      "ckpt_name_4": "None",
+      "clip_skip_4": -1,
+      "vae_name_4": "Baked VAE",
+      "ckpt_name_5": "None",
+      "clip_skip_5": -1,
+      "vae_name_5": "Baked VAE",
+      "ckpt_name_6": "None",
+      "clip_skip_6": -1,
+      "vae_name_6": "Baked VAE",
+      "ckpt_name_7": "None",
+      "clip_skip_7": -1,
+      "vae_name_7": "Baked VAE",
+      "ckpt_name_8": "None",
+      "clip_skip_8": -1,
+      "vae_name_8": "Baked VAE",
+      "ckpt_name_9": "None",
+      "clip_skip_9": -1,
+      "vae_name_9": "Baked VAE",
+      "ckpt_name_10": "None",
+      "clip_skip_10": -1,
+      "vae_name_10": "Baked VAE",
+      "ckpt_name_11": "None",
+      "clip_skip_11": -1,
+      "vae_name_11": "Baked VAE",
+      "ckpt_name_12": "None",
+      "clip_skip_12": -1,
+      "vae_name_12": "Baked VAE",
+      "ckpt_name_13": "None",
+      "clip_skip_13": -1,
+      "vae_name_13": "Baked VAE",
+      "ckpt_name_14": "None",
+      "clip_skip_14": -1,
+      "vae_name_14": "Baked VAE",
+      "ckpt_name_15": "None",
+      "clip_skip_15": -1,
+      "vae_name_15": "Baked VAE",
+      "ckpt_name_16": "None",
+      "clip_skip_16": -1,
+      "vae_name_16": "Baked VAE",
+      "ckpt_name_17": "None",
+      "clip_skip_17": -1,
+      "vae_name_17": "Baked VAE",
+      "ckpt_name_18": "None",
+      "clip_skip_18": -1,
+      "vae_name_18": "Baked VAE",
+      "ckpt_name_19": "None",
+      "clip_skip_19": -1,
+      "vae_name_19": "Baked VAE",
+      "ckpt_name_20": "None",
+      "clip_skip_20": -1,
+      "vae_name_20": "Baked VAE",
+      "ckpt_name_21": "None",
+      "clip_skip_21": -1,
+      "vae_name_21": "Baked VAE",
+      "ckpt_name_22": "None",
+      "clip_skip_22": -1,
+      "vae_name_22": "Baked VAE",
+      "ckpt_name_23": "None",
+      "clip_skip_23": -1,
+      "vae_name_23": "Baked VAE",
+      "ckpt_name_24": "None",
+      "clip_skip_24": -1,
+      "vae_name_24": "Baked VAE",
+      "ckpt_name_25": "None",
+      "clip_skip_25": -1,
+      "vae_name_25": "Baked VAE",
+      "ckpt_name_26": "None",
+      "clip_skip_26": -1,
+      "vae_name_26": "Baked VAE",
+      "ckpt_name_27": "None",
+      "clip_skip_27": -1,
+      "vae_name_27": "Baked VAE",
+      "ckpt_name_28": "None",
+      "clip_skip_28": -1,
+      "vae_name_28": "Baked VAE",
+      "ckpt_name_29": "None",
+      "clip_skip_29": -1,
+      "vae_name_29": "Baked VAE",
+      "ckpt_name_30": "None",
+      "clip_skip_30": -1,
+      "vae_name_30": "Baked VAE",
+      "ckpt_name_31": "None",
+      "clip_skip_31": -1,
+      "vae_name_31": "Baked VAE",
+      "ckpt_name_32": "None",
+      "clip_skip_32": -1,
+      "vae_name_32": "Baked VAE",
+      "ckpt_name_33": "None",
+      "clip_skip_33": -1,
+      "vae_name_33": "Baked VAE",
+      "ckpt_name_34": "None",
+      "clip_skip_34": -1,
+      "vae_name_34": "Baked VAE",
+      "ckpt_name_35": "None",
+      "clip_skip_35": -1,
+      "vae_name_35": "Baked VAE",
+      "ckpt_name_36": "None",
+      "clip_skip_36": -1,
+      "vae_name_36": "Baked VAE",
+      "ckpt_name_37": "None",
+      "clip_skip_37": -1,
+      "vae_name_37": "Baked VAE",
+      "ckpt_name_38": "None",
+      "clip_skip_38": -1,
+      "vae_name_38": "Baked VAE",
+      "ckpt_name_39": "None",
+      "clip_skip_39": -1,
+      "vae_name_39": "Baked VAE",
+      "ckpt_name_40": "None",
+      "clip_skip_40": -1,
+      "vae_name_40": "Baked VAE",
+      "ckpt_name_41": "None",
+      "clip_skip_41": -1,
+      "vae_name_41": "Baked VAE",
+      "ckpt_name_42": "None",
+      "clip_skip_42": -1,
+      "vae_name_42": "Baked VAE",
+      "ckpt_name_43": "None",
+      "clip_skip_43": -1,
+      "vae_name_43": "Baked VAE",
+      "ckpt_name_44": "None",
+      "clip_skip_44": -1,
+      "vae_name_44": "Baked VAE",
+      "ckpt_name_45": "None",
+      "clip_skip_45": -1,
+      "vae_name_45": "Baked VAE",
+      "ckpt_name_46": "None",
+      "clip_skip_46": -1,
+      "vae_name_46": "Baked VAE",
+      "ckpt_name_47": "None",
+      "clip_skip_47": -1,
+      "vae_name_47": "Baked VAE",
+      "ckpt_name_48": "None",
+      "clip_skip_48": -1,
+      "vae_name_48": "Baked VAE",
+      "ckpt_name_49": "None",
+      "clip_skip_49": -1,
+      "vae_name_49": "Baked VAE",
+      "ckpt_name_50": "None",
+      "clip_skip_50": -1,
+      "vae_name_50": "Baked VAE"
+    },
+    "class_type": "XY Input: Checkpoint",
+    "_meta": {
+      "title": "XY Input: Checkpoint"
+    }
+  },
+  "118": {
+    "inputs": {
+      "rng_source": "gpu",
+      "cfg_denoiser": true,
+      "add_seed_noise": false,
+      "seed": -1,
+      "weight": 0.015,
+      "script": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "Noise Control Script",
+    "_meta": {
+      "title": "Noise Control Script"
+    }
+  },
+  "119": {
+    "inputs": {
+      "upscale_type": "latent",
+      "hires_ckpt_name": "(use same)",
+      "latent_upscaler": "ttl_nn.SD 1.x",
+      "pixel_upscaler": "4x_fatal_Anime_500000_G.pth",
+      "upscale_by": 1.5,
+      "use_same_seed": false,
+      "seed": 605473268262571,
+      "hires_steps": 12,
+      "denoise": 0.56,
+      "iterations": 1,
+      "use_controlnet": false,
+      "control_net_name": "t2i\\coadapter-canny-sd15v1.pth",
+      "strength": 1,
+      "preprocessor": "CannyEdgePreprocessor",
+      "preprocessor_imgs": true,
+      "script": [
+        "118",
+        0
+      ]
+    },
+    "class_type": "HighRes-Fix Script",
+    "_meta": {
+      "title": "HighRes-Fix Script"
+    }
+  }
+}

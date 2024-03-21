@@ -1,0 +1,253 @@
+{
+  "31": {
+    "inputs": {
+      "text": "1girl, photorealistic:1.4, masterpiece, holding book, full shot, black suit, perfect anatomy, office, detailed eyes, smile",
+      "clip": [
+        "78",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt) - Positive"
+    }
+  },
+  "37": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "78",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt) - Negative"
+    }
+  },
+  "40": {
+    "inputs": {
+      "samples": [
+        "42",
+        0
+      ],
+      "vae": [
+        "78",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "41": {
+    "inputs": {
+      "images": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Prompt Image"
+    }
+  },
+  "42": {
+    "inputs": {
+      "seed": 805157917915455,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "90",
+        0
+      ],
+      "positive": [
+        "90",
+        3
+      ],
+      "negative": [
+        "90",
+        4
+      ],
+      "latent_image": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "44": {
+    "inputs": {
+      "width": 256,
+      "height": 320,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "71": {
+    "inputs": {
+      "filename_prefix": "refined",
+      "images": [
+        "100",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Refined Image"
+    }
+  },
+  "78": {
+    "inputs": {
+      "ckpt_name": "sd15/DreamShaper_v8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "81": {
+    "inputs": {
+      "threshold": 0.5,
+      "dilation": 10,
+      "crop_factor": 3,
+      "drop_size": 10,
+      "labels": "all",
+      "bbox_detector": [
+        "101",
+        0
+      ],
+      "image": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "BboxDetectorSEGS",
+    "_meta": {
+      "title": "BBOX Detector (SEGS)"
+    }
+  },
+  "83": {
+    "inputs": {
+      "model": [
+        "78",
+        0
+      ],
+      "clip": [
+        "78",
+        1
+      ],
+      "vae": [
+        "78",
+        2
+      ],
+      "positive": [
+        "31",
+        0
+      ],
+      "negative": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "ToBasicPipe",
+    "_meta": {
+      "title": "ToBasicPipe"
+    }
+  },
+  "85": {
+    "inputs": {
+      "basic_pipe": [
+        "83",
+        0
+      ]
+    },
+    "class_type": "FromBasicPipe",
+    "_meta": {
+      "title": "FromBasicPipe"
+    }
+  },
+  "90": {
+    "inputs": {
+      "basic_pipe": [
+        "83",
+        0
+      ]
+    },
+    "class_type": "FromBasicPipe",
+    "_meta": {
+      "title": "FromBasicPipe"
+    }
+  },
+  "100": {
+    "inputs": {
+      "guide_size": 256,
+      "guide_size_for": "bbox",
+      "max_size": 768,
+      "seed": 7,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.5,
+      "feather": 5,
+      "noise_mask": "enabled",
+      "force_inpaint": "disabled",
+      "wildcard": "",
+      "cycle": 1,
+      "inpaint_model": false,
+      "noise_mask_feather": 20,
+      "image": [
+        "40",
+        0
+      ],
+      "segs": [
+        "81",
+        0
+      ],
+      "model": [
+        "85",
+        0
+      ],
+      "clip": [
+        "85",
+        1
+      ],
+      "vae": [
+        "85",
+        2
+      ],
+      "positive": [
+        "85",
+        3
+      ],
+      "negative": [
+        "85",
+        4
+      ]
+    },
+    "class_type": "DetailerForEach",
+    "_meta": {
+      "title": "Detailer (SEGS)"
+    }
+  },
+  "101": {
+    "inputs": {
+      "model_name": "bbox/face_yolov8m.pt"
+    },
+    "class_type": "UltralyticsDetectorProvider",
+    "_meta": {
+      "title": "UltralyticsDetectorProvider"
+    }
+  }
+}

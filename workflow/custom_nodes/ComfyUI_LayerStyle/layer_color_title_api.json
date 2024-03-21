@@ -1,0 +1,262 @@
+{
+  "1": {
+    "inputs": {
+      "opacity": 55,
+      "image": [
+        "10",
+        0
+      ],
+      "color_ref_image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "LayerColor: ColorAdapter",
+    "_meta": {
+      "title": "LayerColor: ColorAdapter"
+    }
+  },
+  "2": {
+    "inputs": {
+      "brightness": 0.8300000000000001,
+      "contrast": 0.9500000000000001,
+      "saturation": 0.33,
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerColor: Brightness & Contrast",
+    "_meta": {
+      "title": "LayerColor: Brightness & Contrast"
+    }
+  },
+  "3": {
+    "inputs": {
+      "gamma": 1.4000000000000001,
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerColor: Gamma",
+    "_meta": {
+      "title": "LayerColor: Gamma"
+    }
+  },
+  "4": {
+    "inputs": {
+      "H": 9,
+      "S": 30,
+      "V": -9,
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerColor: HSV",
+    "_meta": {
+      "title": "LayerColor: HSV"
+    }
+  },
+  "5": {
+    "inputs": {
+      "L": -14,
+      "A": -8,
+      "B": -24,
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerColor: LAB",
+    "_meta": {
+      "title": "LayerColor: LAB"
+    }
+  },
+  "6": {
+    "inputs": {
+      "LUT": "BlueArchitecture.cube",
+      "color_space": "linear",
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerColor: LUT Apply",
+    "_meta": {
+      "title": "LayerColor: LUT Apply"
+    }
+  },
+  "7": {
+    "inputs": {
+      "R": -4,
+      "G": 16,
+      "B": 38,
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerColor: RGB",
+    "_meta": {
+      "title": "LayerColor: RGB"
+    }
+  },
+  "8": {
+    "inputs": {
+      "Y": 9,
+      "U": -10,
+      "V": 14,
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerColor: YUV",
+    "_meta": {
+      "title": "LayerColor: YUV"
+    }
+  },
+  "9": {
+    "inputs": {
+      "exposure": 26,
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "LayerColor: Exposure",
+    "_meta": {
+      "title": "LayerColor: Exposure"
+    }
+  },
+  "10": {
+    "inputs": {
+      "image": "1344x768_girl2.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "12": {
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "14": {
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "16": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "17": {
+    "inputs": {
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "18": {
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "19": {
+    "inputs": {
+      "images": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "20": {
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "21": {
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}

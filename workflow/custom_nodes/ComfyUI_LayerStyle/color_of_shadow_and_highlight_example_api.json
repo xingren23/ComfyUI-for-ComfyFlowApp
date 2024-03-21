@@ -1,0 +1,46 @@
+{
+  "12": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "images": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "22": {
+    "inputs": {
+      "shadow_brightness": 1,
+      "shadow_saturation": 1,
+      "shadow_hue": 0,
+      "shadow_level_offset": 0,
+      "shadow_range": 0.25,
+      "highlight_brightness": 0.88,
+      "highlight_saturation": 1.36,
+      "highlight_hue": -125,
+      "highlight_level_offset": 12,
+      "highlight_range": 0.28,
+      "image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "LayerColor: Color of Shadow & Highlight",
+    "_meta": {
+      "title": "LayerColor: Color of Shadow & Highlight"
+    }
+  }
+}

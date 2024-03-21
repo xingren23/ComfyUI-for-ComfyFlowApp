@@ -1,0 +1,83 @@
+{
+  "149": {
+    "inputs": {
+      "noise_seed": 238710419612190,
+      "steps": 35,
+      "cfg": 9,
+      "sampler_name": "dpmpp_2s_ancestral",
+      "scheduler": "karras",
+      "start_at_step": 0,
+      "refine_at_step": 30,
+      "preview_method": "auto",
+      "vae_decode": "true",
+      "sdxl_tuple": [
+        "150",
+        0
+      ],
+      "latent_image": [
+        "150",
+        1
+      ],
+      "optional_vae": [
+        "150",
+        2
+      ],
+      "script": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "KSampler SDXL (Eff.)",
+    "_meta": {
+      "title": "KSampler SDXL (Eff.)"
+    }
+  },
+  "150": {
+    "inputs": {
+      "base_ckpt_name": "sdxl/sd_xl_base_1-0.safetensors",
+      "base_clip_skip": -2,
+      "refiner_ckpt_name": "sdxl/sd_xl_refiner_1-0.safetensors",
+      "refiner_clip_skip": -2,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "vae_name": "sdxl_vae.safetensors",
+      "positive": "award winning character concept art of, a cute mechanical witch, light brown hair, blue eyes, pink and white dress, blurry_ background, bewitching, smile, stunning, witch hat, natural lighting, buxom, lips, short hair, looking_ at_ viewer, solo, from side, highly detailed 8k character concept portrait studio lighting by Annie Leibovitz and Steve McCurry octane render trending on art station made in Maya 4K high quality digital painting dramatic lighting",
+      "negative": "3d, low quality, worst quality, mutation, deformed hands, ( three arms or more, three hands or more, three legs or more, three feet or more, comics style:1.6), NSFW, nudes , signature, artefacts",
+      "token_normalization": "length+mean",
+      "weight_interpretation": "comfy",
+      "empty_latent_width": 1216,
+      "empty_latent_height": 832,
+      "batch_size": 1
+    },
+    "class_type": "Eff. Loader SDXL",
+    "_meta": {
+      "title": "Eff. Loader SDXL"
+    }
+  },
+  "158": {
+    "inputs": {
+      "rng_source": "gpu",
+      "cfg_denoiser": true,
+      "add_seed_noise": false,
+      "seed": -1,
+      "weight": 0.015
+    },
+    "class_type": "Noise Control Script",
+    "_meta": {
+      "title": "Noise Control Script"
+    }
+  },
+  "159": {
+    "inputs": {
+      "filename_prefix": "SDXL\\hires_00",
+      "images": [
+        "149",
+        3
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

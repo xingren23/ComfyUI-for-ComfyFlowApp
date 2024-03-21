@@ -1,0 +1,58 @@
+{
+  "23": {
+    "inputs": {
+      "image": "1280x720car.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "26": {
+    "inputs": {
+      "images": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "28": {
+    "inputs": {
+      "mask": [
+        "29",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "29": {
+    "inputs": {
+      "invert_mask": true,
+      "top": 80,
+      "bottom": 59,
+      "left": 135,
+      "right": 112,
+      "color": "#8a0000",
+      "image": [
+        "23",
+        0
+      ],
+      "mask": [
+        "23",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ExtendCanvas",
+    "_meta": {
+      "title": "LayerUtility: ExtendCanvas"
+    }
+  }
+}

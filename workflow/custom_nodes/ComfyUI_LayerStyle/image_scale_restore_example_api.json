@@ -1,0 +1,128 @@
+{
+  "3": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "5": {
+    "inputs": {
+      "scale": 2,
+      "method": "lanczos",
+      "scale_by_longest_side": false,
+      "longest_side": 1024,
+      "image": [
+        "3",
+        0
+      ],
+      "mask": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageScaleRestore",
+    "_meta": {
+      "title": "LayerUtility: ImageScaleRestore"
+    }
+  },
+  "12": {
+    "inputs": {
+      "mask": [
+        "5",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "16": {
+    "inputs": {
+      "mask": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "17": {
+    "inputs": {
+      "mask": [
+        "22",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "18": {
+    "inputs": {
+      "images": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "22": {
+    "inputs": {
+      "scale": 1,
+      "method": "lanczos",
+      "scale_by_longest_side": false,
+      "longest_side": 1024,
+      "image": [
+        "5",
+        0
+      ],
+      "mask": [
+        "5",
+        1
+      ],
+      "original_size": [
+        "5",
+        2
+      ]
+    },
+    "class_type": "LayerUtility: ImageScaleRestore",
+    "_meta": {
+      "title": "LayerUtility: ImageScaleRestore"
+    }
+  },
+  "24": {
+    "inputs": {
+      "mask": [
+        "3",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskInvert",
+    "_meta": {
+      "title": "LayerMask: MaskInvert"
+    }
+  }
+}

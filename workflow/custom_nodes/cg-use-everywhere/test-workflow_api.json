@@ -1,0 +1,166 @@
+{
+  "5": {
+    "inputs": {
+      "steps": 35,
+      "cfg": 8,
+      "sampler_name": "dpmpp_2m_sde",
+      "scheduler": "karras",
+      "denoise": 1
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "7": {
+    "inputs": {},
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "144": {
+    "inputs": {},
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "148": {
+    "inputs": {
+      "ckpt_name": "sdxl/Juggernaut-xl_v9.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "162": {
+    "inputs": {
+      "text": "atmospheric photo of woman at night"
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "163": {
+    "inputs": {
+      "text": "blue"
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "169": {
+    "inputs": {
+      "seed": 356735678581
+    },
+    "class_type": "Seed Everywhere",
+    "_meta": {
+      "title": "Seed Everywhere"
+    }
+  },
+  "178": {
+    "inputs": {
+      "width": 768,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "179": {
+    "inputs": {
+      "IMAGE": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere",
+    "_meta": {
+      "title": "Anything Everywhere"
+    }
+  },
+  "180": {
+    "inputs": {
+      "CONDITIONING": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "Prompts Everywhere",
+    "_meta": {
+      "title": "Prompts Everywhere"
+    }
+  },
+  "181": {
+    "inputs": {
+      "MODEL": [
+        "182",
+        0
+      ],
+      "CLIP": [
+        "182",
+        1
+      ],
+      "VAE": [
+        "148",
+        2
+      ]
+    },
+    "class_type": "Anything Everywhere3",
+    "_meta": {
+      "title": "Anything Everywhere3"
+    }
+  },
+  "182": {
+    "inputs": {
+      "lora_name": "StickersRedmond_sdxl.safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "model": [
+        "148",
+        0
+      ],
+      "clip": [
+        "148",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "183": {
+    "inputs": {
+      "LATENT": [
+        "178",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere",
+    "_meta": {
+      "title": "Anything Everywhere"
+    }
+  },
+  "184": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "samples",
+      "group_regex": ".*",
+      "LATENT": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?",
+    "_meta": {
+      "title": "Anything Everywhere?"
+    }
+  }
+}

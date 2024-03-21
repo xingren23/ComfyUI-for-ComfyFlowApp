@@ -1,0 +1,87 @@
+{
+  "2": {
+    "inputs": {
+      "image": "1344x768_girl2.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "image": "1344x768_beach.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "mask": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "17": {
+    "inputs": {
+      "invert_mask": false,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "background_image": [
+        "7",
+        0
+      ],
+      "layer_image": [
+        "2",
+        0
+      ],
+      "layer_mask": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlend",
+    "_meta": {
+      "title": "LayerUtility: ImageBlend"
+    }
+  },
+  "18": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "gradient_side": "right",
+      "gradient_scale": 60,
+      "gradient_offset": 248,
+      "opacity": 100,
+      "size_as": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LayerMask: CreateGradientMask",
+    "_meta": {
+      "title": "LayerMask: CreateGradientMask"
+    }
+  }
+}

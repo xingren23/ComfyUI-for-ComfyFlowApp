@@ -1,0 +1,231 @@
+{
+  "2": {
+    "inputs": {
+      "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "3": {
+    "inputs": {
+      "text": "a girl, hair shakes",
+      "clip": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "4": {
+    "inputs": {
+      "stop_at_clip_layer": -2,
+      "clip": [
+        "32",
+        1
+      ]
+    },
+    "class_type": "CLIPSetLastLayer",
+    "_meta": {
+      "title": "CLIP Set Last Layer"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "(worst quality, low quality: 1.4)",
+      "clip": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "27": {
+    "inputs": {
+      "model_name": "mm_sd_v15.ckpt",
+      "beta_schedule": "sqrt_linear (AnimateDiff)",
+      "motion_scale": 1,
+      "apply_v2_models_properly": false,
+      "model": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "ADE_AnimateDiffLoaderWithContext",
+    "_meta": {
+      "title": "AnimateDiff Loader [Legacy] 🎭🅐🅓①"
+    }
+  },
+  "32": {
+    "inputs": {
+      "ckpt_name": "sd15/DreamShaper_v8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "41": {
+    "inputs": {
+      "guide_size": 256,
+      "guide_size_for": true,
+      "max_size": 768,
+      "seed": 615841318308138,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.8,
+      "refiner_ratio": 0.2,
+      "image_frames": [
+        "78",
+        0
+      ],
+      "segs": [
+        "63",
+        0
+      ],
+      "basic_pipe": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "SEGSDetailerForAnimateDiff",
+    "_meta": {
+      "title": "SEGSDetailer For AnimateDiff (SEGS/pipe)"
+    }
+  },
+  "42": {
+    "inputs": {
+      "model": [
+        "27",
+        0
+      ],
+      "clip": [
+        "32",
+        1
+      ],
+      "vae": [
+        "2",
+        0
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "ToBasicPipe",
+    "_meta": {
+      "title": "ToBasicPipe"
+    }
+  },
+  "49": {
+    "inputs": {
+      "feather": 5,
+      "alpha": 255,
+      "image": [
+        "78",
+        0
+      ],
+      "segs": [
+        "41",
+        0
+      ]
+    },
+    "class_type": "SEGSPaste",
+    "_meta": {
+      "title": "SEGSPaste"
+    }
+  },
+  "51": {
+    "inputs": {
+      "frame_rate": 8,
+      "loop_count": 11,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 20,
+      "save_metadata": true,
+      "pingpong": true,
+      "save_output": true,
+      "images": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "63": {
+    "inputs": {
+      "combined": false,
+      "crop_factor": 1.5,
+      "bbox_fill": false,
+      "drop_size": 10,
+      "contour_fill": false,
+      "mask": [
+        "76",
+        1
+      ]
+    },
+    "class_type": "MaskToSEGS",
+    "_meta": {
+      "title": "MASK to SEGS"
+    }
+  },
+  "76": {
+    "inputs": {
+      "image": "background_512_512.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "78": {
+    "inputs": {
+      "batch_size": 16,
+      "mode": "simple",
+      "image": [
+        "86",
+        0
+      ]
+    },
+    "class_type": "ChangeImageBatchSize //Inspire",
+    "_meta": {
+      "title": "Change Image Batch Size (Inspire)"
+    }
+  },
+  "86": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "interpolation": "lanczos",
+      "keep_proportion": false,
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "76",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  }
+}

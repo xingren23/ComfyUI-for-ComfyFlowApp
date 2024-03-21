@@ -1,0 +1,562 @@
+{
+  "1": {
+    "inputs": {
+      "image": "pose.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "safe": "enable",
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "PiDiNetPreprocessor",
+    "_meta": {
+      "title": "PiDiNet Soft-Edge Lines"
+    }
+  },
+  "3": {
+    "inputs": {
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ColorPreprocessor",
+    "_meta": {
+      "title": "Color Pallete"
+    }
+  },
+  "4": {
+    "inputs": {
+      "low_threshold": 100,
+      "high_threshold": 200,
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "CannyEdgePreprocessor",
+    "_meta": {
+      "title": "Canny Edge"
+    }
+  },
+  "5": {
+    "inputs": {
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "SAMPreprocessor",
+    "_meta": {
+      "title": "SAM Segmentor"
+    }
+  },
+  "7": {
+    "inputs": {
+      "detect_hand": "enable",
+      "detect_body": "enable",
+      "detect_face": "enable",
+      "resolution": 512,
+      "bbox_detector": "yolox_l.onnx",
+      "pose_estimator": "dw-ll_ucoco_384_bs5.torchscript.pt",
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "DWPreprocessor",
+    "_meta": {
+      "title": "DWPose Estimator"
+    }
+  },
+  "8": {
+    "inputs": {
+      "bin_threshold": 100,
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "BinaryPreprocessor",
+    "_meta": {
+      "title": "Binary Lines"
+    }
+  },
+  "9": {
+    "inputs": {
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ScribblePreprocessor",
+    "_meta": {
+      "title": "Scribble Lines"
+    }
+  },
+  "10": {
+    "inputs": {
+      "score_threshold": 0.1,
+      "dist_threshold": 0.1,
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "M-LSDPreprocessor",
+    "_meta": {
+      "title": "M-LSD Lines"
+    }
+  },
+  "11": {
+    "inputs": {
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "UniFormer-SemSegPreprocessor",
+    "_meta": {
+      "title": "UniFormer Segmentor"
+    }
+  },
+  "12": {
+    "inputs": {
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "Zoe-DepthMapPreprocessor",
+    "_meta": {
+      "title": "Zoe Depth Map"
+    }
+  },
+  "13": {
+    "inputs": {
+      "a": 6.283185307179586,
+      "bg_threshold": 0.1,
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "MiDaS-NormalMapPreprocessor",
+    "_meta": {
+      "title": "MiDaS Normal Map"
+    }
+  },
+  "14": {
+    "inputs": {
+      "a": 6.283185307179586,
+      "bg_threshold": 0.1,
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "MiDaS-DepthMapPreprocessor",
+    "_meta": {
+      "title": "MiDaS Depth Map"
+    }
+  },
+  "15": {
+    "inputs": {
+      "detect_hand": "enable",
+      "detect_body": "enable",
+      "detect_face": "enable",
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "OpenposePreprocessor",
+    "_meta": {
+      "title": "OpenPose Pose"
+    }
+  },
+  "16": {
+    "inputs": {
+      "coarse": "enable",
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "LineArtPreprocessor",
+    "_meta": {
+      "title": "Realistic Lineart"
+    }
+  },
+  "17": {
+    "inputs": {
+      "rm_nearest": 0,
+      "rm_background": 0,
+      "boost": "enable",
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "LeReS-DepthMapPreprocessor",
+    "_meta": {
+      "title": "LeReS Depth Map (enable boost for leres++)"
+    }
+  },
+  "18": {
+    "inputs": {
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "BAE-NormalMapPreprocessor",
+    "_meta": {
+      "title": "BAE Normal Map"
+    }
+  },
+  "19": {
+    "inputs": {
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "OneFormer-COCO-SemSegPreprocessor",
+    "_meta": {
+      "title": "OneFormer COCO Segmentor"
+    }
+  },
+  "20": {
+    "inputs": {
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "OneFormer-ADE20K-SemSegPreprocessor",
+    "_meta": {
+      "title": "OneFormer ADE20K Segmentor"
+    }
+  },
+  "21": {
+    "inputs": {
+      "safe": "enable",
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "HEDPreprocessor",
+    "_meta": {
+      "title": "HED Soft-Edge Lines"
+    }
+  },
+  "22": {
+    "inputs": {
+      "safe": "enable",
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "FakeScribblePreprocessor",
+    "_meta": {
+      "title": "Fake Scribble Lines (aka scribble_hed)"
+    }
+  },
+  "24": {
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "25": {
+    "inputs": {
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "26": {
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "27": {
+    "inputs": {
+      "images": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "28": {
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "29": {
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "30": {
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "31": {
+    "inputs": {
+      "images": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "32": {
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "33": {
+    "inputs": {
+      "images": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "34": {
+    "inputs": {
+      "images": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "35": {
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "36": {
+    "inputs": {
+      "images": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "37": {
+    "inputs": {
+      "images": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "38": {
+    "inputs": {
+      "images": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "39": {
+    "inputs": {
+      "images": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "40": {
+    "inputs": {
+      "images": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "41": {
+    "inputs": {
+      "images": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "42": {
+    "inputs": {
+      "images": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "43": {
+    "inputs": {
+      "images": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "44": {
+    "inputs": {
+      "pyrUp_iters": 3,
+      "resolution": 512,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "TilePreprocessor",
+    "_meta": {
+      "title": "Tile"
+    }
+  },
+  "45": {
+    "inputs": {
+      "images": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}

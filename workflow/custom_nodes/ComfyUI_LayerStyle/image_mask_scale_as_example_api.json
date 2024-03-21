@@ -1,0 +1,84 @@
+{
+  "2": {
+    "inputs": {
+      "image": "background_512_512.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "42": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "58": {
+    "inputs": {
+      "images": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "59": {
+    "inputs": {
+      "mask": [
+        "64",
+        1
+      ]
+    },
+    "class_type": "LayerMask: MaskPreview",
+    "_meta": {
+      "title": "LayerMask: MaskPreview"
+    }
+  },
+  "64": {
+    "inputs": {
+      "fit": "letterbox",
+      "method": "lanczos",
+      "scale_as": [
+        "42",
+        0
+      ],
+      "image": [
+        "2",
+        0
+      ],
+      "mask": [
+        "66",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageMaskScaleAs",
+    "_meta": {
+      "title": "LayerUtility: ImageMaskScaleAs"
+    }
+  },
+  "66": {
+    "inputs": {
+      "detail_range": 8,
+      "black_point": 0.01,
+      "white_point": 0.99,
+      "process_detail": false,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LayerMask: RemBgUltra",
+    "_meta": {
+      "title": "LayerMask: RemBgUltra"
+    }
+  }
+}

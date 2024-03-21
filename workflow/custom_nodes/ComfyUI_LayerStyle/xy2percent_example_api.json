@@ -1,0 +1,99 @@
+{
+  "8": {
+    "inputs": {
+      "image": "512x512.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "9": {
+    "inputs": {
+      "image": "3840x2160car.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "19": {
+    "inputs": {
+      "invert_mask": true,
+      "blend_mode": "normal",
+      "opacity": 100,
+      "x_percent": [
+        "38",
+        0
+      ],
+      "y_percent": [
+        "38",
+        1
+      ],
+      "mirror": "horizontal",
+      "scale": 1,
+      "aspect_ratio": 1,
+      "rotate": 0,
+      "transform_method": "lanczos",
+      "anti_aliasing": 0.11,
+      "background_image": [
+        "9",
+        0
+      ],
+      "layer_image": [
+        "8",
+        0
+      ],
+      "layer_mask": [
+        "8",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: ImageBlendAdvance",
+    "_meta": {
+      "title": "LayerUtility: ImageBlendAdvance"
+    }
+  },
+  "37": {
+    "inputs": {
+      "images": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "38": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "background_image": [
+        "9",
+        0
+      ],
+      "layer_image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: XY to Percent",
+    "_meta": {
+      "title": "LayerUtility: XY to Percent"
+    }
+  },
+  "39": {
+    "inputs": {
+      "x": 0,
+      "y": 0
+    },
+    "class_type": "LayerUtility: XY to Percent",
+    "_meta": {
+      "title": "LayerUtility: XY to Percent"
+    }
+  }
+}
