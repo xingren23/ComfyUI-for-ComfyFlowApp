@@ -1,0 +1,47 @@
+#Rename this to extra_model_paths.yaml and ComfyUI will load it
+
+#config for comfyui
+#your base path should be either an existing comfy install or a central folder where you store all of your models, loras, etc.
+
+comfyui:
+    base_path: /workspace
+    checkpoints: models/checkpoints/
+    blip: models/blip/
+    clip: models/clip/
+    clip_vision: models/clip_vision/
+    clipseg: models/clipseg/
+    configs: models/configs/
+    controlnet: models/controlnet/
+    diffusers: models/diffusers/
+    embeddings: models/embeddings/
+    facedetection: models/facedetection/
+    facerestore_models: models/facerestore_models/
+    gligen: models/gligen/
+    hypernetworks: models/hypernetworks/
+    insightface: models/insightface/
+    ipadapter: models/ipadapter/
+    loras: models/loras/
+    mmdets: models/mmdets/
+    mmdets_bbox: models/mmdets/bbox/
+    mmdets_segm: models/mmdets/segm/
+    onnx: models/onnx/
+    reactor: models/reactor/
+    rembg: models/rembg/
+    sams: models/sams/
+    grounding-dino: models/grounding-dino/
+    style_models: models/style_models/
+    unet: models/unet/
+    upscale_models: models/upscale_models/
+    vae: models/vae/
+    vae_approx: models/vae_approx/
+    rmbg: models/rmbg/RMBG-1.4/
+    instantid: models/instantid/
+    animatediff_models: models/animatediff_models/
+    animatediff_motion_loras: models/animatediff_motion_loras/
+    inpaint: models/inpaint/
+    ultralytics: models/ultralytics/
+    ultralytics_bbox: models/ultralytics/bbox/
+    ultralytics_segm: models/ultralytics/segm/
+    layer_model: models/layerdiff/
+    wd14_tagger: models/wd14_tagger/
+    mediapipe: models/mediapipe/
