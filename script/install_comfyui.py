@@ -54,7 +54,6 @@ custom_nodes_repos = [
   "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
   "https://github.com/chflame163/ComfyUI_LayerStyle",
   "https://github.com/Fannovel16/comfyui_controlnet_aux",
-  "https://github.com/11cafe/comfyui-workspace-manager",
 ]
 
 # clone or update repos

@@ -21,5 +21,5 @@ MODELS_PATH=${COMFYUI_MODELS_PATH:-"/workspace/models"}
 echo "Creating symlink from ${MODELS_PATH} to ${COMFYUI_PATH}/models"
 ln -s "${MODELS_PATH}" "${COMFYUI_PATH}/models"
 
-nohup python -u main.py --port=8888 --preview-method auto --force-fp16 > comfyui.log 2>&1 &
+nohup python -u main.py --port=8888 --preview-method auto --force-fp16 > ../comfyui.log 2>&1 &
 
