@@ -1,7 +1,13 @@
-# ComfyUI for ComfyFlow
 
+**Build the ComfyUI environment with one click and test related workflows.**
 
-The ComfyUI for ComfyFlowApp is a version maintained by ComfyFlowApp, which includes several commonly used ComfyUI extension nodes. The online platform of ComfyFlowApp also utilizes this version, ensuring that workflow applications developed with it can operate seamlessly on ComfyFlowApp.
+**This ComfyUI is the official version maintained by ComfyFlowApp. Workflows created in this version can also be published to [ComfyFlowApp](https://comfyflow.app) online**
+
+# ComfyUI for ComfyFlowApp
+
+The ComfyUI for ComfyFlowApp is the official version maintained by ComfyFlowApp, which includes several commonly used ComfyUI custom nodes. The online platform of ComfyFlowApp also utilizes this version, ensuring that workflow applications developed with it can operate seamlessly on ComfyFlowApp.
+
+Instead of using ComfyUI-Manager to install missing nodes, the project carefully picks the custom nodes and verifies that there are no conflicts between them.
 
 - [ComfyUI Image Filters](https://github.com/spacepxl/ComfyUI-Image-Filters)
 - [ComfyUI Segment Anything](https://github.com/storyicon/comfyui_segment_anything)
@@ -17,6 +23,7 @@ The ComfyUI for ComfyFlowApp is a version maintained by ComfyFlowApp, which incl
 - [ComfyUI Custom Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts)
 - [Efficiency Nodes ComfyUI](https://github.com/jags111/efficiency-nodes-comfyui)
 - [ComfyUI Impact Pack](https://github.com/xingren23/ComfyUI-Impact-Pack)
+- [ComfyUI-Inspire-Pack]("https://github.com/ltdrdata/ComfyUI-Inspire-Pack")
 - [ComfyUI Advanced ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet)
 - [ComfyUi PromptStylers](https://github.com/wolfden/ComfyUi_PromptStylers)
 - [OneButtonPrompt](https://github.com/AIrjen/OneButtonPrompt)
@@ -32,6 +39,7 @@ The ComfyUI for ComfyFlowApp is a version maintained by ComfyFlowApp, which incl
 - [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)
 - [ComfyUI LayerStyle](https://github.com/chflame163/ComfyUI_LayerStyle)
 - [ComfyUI ControlNet Aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+
 
 
 ## How to use

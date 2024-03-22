@@ -55,7 +55,6 @@ custom_nodes_repos = [
   "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
   "https://github.com/chflame163/ComfyUI_LayerStyle",
   "https://github.com/Fannovel16/comfyui_controlnet_aux",
-  "https://github.com/xingren23/ComfyUI-CLIPSeg",
 ]
 
 
