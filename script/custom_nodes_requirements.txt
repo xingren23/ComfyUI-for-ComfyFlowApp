@@ -1,5 +1,5 @@
 ultralytics
-opencv-contrib-python-headless[ffmpeg]>=4.7.0.72
+
 pymatting
 addict
 yapf
@@ -32,6 +32,7 @@ scikit-learn
 timm>=0.4.12
 onnx
 numpy
+opencv-contrib-python-headless[ffmpeg]>=4.7.0.72
 opencv-contrib-python
 colour-science
 wget

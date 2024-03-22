@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "seed": 1111663225825007,
+      "seed": 513445809066107,
       "steps": 35,
       "cfg": 8,
       "sampler_name": "dpmpp_3m_sde_gpu",
@@ -20,7 +20,7 @@
         0
       ],
       "latent_image": [
-        "55",
+        "5",
         0
       ]
     },
@@ -31,11 +31,22 @@
   },
   "4": {
     "inputs": {
-      "ckpt_name": "sdxl/Juggernaut-xl_v9.safetensors"
+      "ckpt_name": "sd15/DreamShaper_v8.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
       "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
     }
   },
   "6": {
@@ -134,61 +145,12 @@
       "title": "FreeU_V2"
     }
   },
-  "24": {
-    "inputs": {
-      "switch_1": "On",
-      "upscale_model_1": "RealESRGAN_x2plus.pth",
-      "rescale_factor_1": 1,
-      "switch_2": "On",
-      "upscale_model_2": "RealESRGAN_x2plus.pth",
-      "rescale_factor_2": 1,
-      "switch_3": "On",
-      "upscale_model_3": "RealESRGAN_x4plus.pth",
-      "rescale_factor_3": 2
-    },
-    "class_type": "CR Multi Upscale Stack",
-    "_meta": {
-      "title": "🔍 CR Multi Upscale Stack"
-    }
-  },
-  "25": {
-    "inputs": {
-      "resampling_method": "lanczos",
-      "supersample": "true",
-      "rounding_modulus": 8,
-      "image": [
-        "8",
-        0
-      ],
-      "upscale_stack": [
-        "24",
-        0
-      ]
-    },
-    "class_type": "CR Apply Multi Upscale",
-    "_meta": {
-      "title": "🔍 CR Apply Multi Upscale"
-    }
-  },
-  "27": {
-    "inputs": {
-      "filename_prefix": "arty\\up_00",
-      "images": [
-        "25",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
-    }
-  },
   "29": {
     "inputs": {
       "text_positive": "(delightful princess:1. 1), (gloomy illumination, insane, stunning, dramatic, completed artwork, HQ:1. 1), (ornamental filigree expression  , Dan mumford style:1. 2), sinewy facial patterns, hieroglyph, glitch art, neon, floral patterns, hieroglyph, glitch art, face symmetry, masterpiece, award - winning, sharp focus, intricate concept art, ambient lighting, artstation, pixiv, (astronaut), cosmic, galaxy, moon, UHD, HDR,",
       "text_negative": "text, watermark, deformed body, deformed face, extra limbs, extra fingers, fused fingered, fuzzy",
       "style": "sai-cinematic",
-      "log_prompt": false,
+      "log_prompt": "Yes",
       "style_positive": true,
       "style_negative": true
     },
@@ -200,7 +162,7 @@
   "32": {
     "inputs": {
       "add_noise": "enable",
-      "noise_seed": 426427666665571,
+      "noise_seed": 1121511050678726,
       "steps": 35,
       "cfg": 8,
       "sampler_name": "dpmpp_3m_sde_gpu",
@@ -223,7 +185,7 @@
         0
       ],
       "latent_image": [
-        "55",
+        "5",
         0
       ],
       "optional_vae": [
@@ -242,7 +204,7 @@
   },
   "33": {
     "inputs": {
-      "noise_seed": 1119555229941549,
+      "noise_seed": 212465384885208,
       "steps": 30,
       "cfg": 8,
       "sampler_name": "dpmpp_3m_sde_gpu",
@@ -256,7 +218,7 @@
         0
       ],
       "latent_image": [
-        "55",
+        "5",
         0
       ],
       "optional_vae": [
@@ -294,55 +256,6 @@
       "filename_prefix": "arty\\ADV00",
       "images": [
         "40",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
-    }
-  },
-  "42": {
-    "inputs": {
-      "switch_1": "On",
-      "upscale_model_1": "RealESRGAN_x2plus.pth",
-      "rescale_factor_1": 1,
-      "switch_2": "On",
-      "upscale_model_2": "RealESRGAN_x2plus.pth",
-      "rescale_factor_2": 1,
-      "switch_3": "On",
-      "upscale_model_3": "RealESRGAN_x4plus.pth",
-      "rescale_factor_3": 2
-    },
-    "class_type": "CR Multi Upscale Stack",
-    "_meta": {
-      "title": "🔍 CR Multi Upscale Stack"
-    }
-  },
-  "43": {
-    "inputs": {
-      "resampling_method": "lanczos",
-      "supersample": "true",
-      "rounding_modulus": 8,
-      "image": [
-        "40",
-        0
-      ],
-      "upscale_stack": [
-        "42",
-        0
-      ]
-    },
-    "class_type": "CR Apply Multi Upscale",
-    "_meta": {
-      "title": "🔍 CR Apply Multi Upscale"
-    }
-  },
-  "44": {
-    "inputs": {
-      "filename_prefix": "arty\\ADVup_00",
-      "images": [
-        "43",
         0
       ]
     },
@@ -404,61 +317,12 @@
       "title": "Save Image"
     }
   },
-  "49": {
-    "inputs": {
-      "filename_prefix": "arty\\SDXL_up_00",
-      "images": [
-        "50",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
-    }
-  },
-  "50": {
-    "inputs": {
-      "resampling_method": "lanczos",
-      "supersample": "true",
-      "rounding_modulus": 8,
-      "image": [
-        "33",
-        3
-      ],
-      "upscale_stack": [
-        "51",
-        0
-      ]
-    },
-    "class_type": "CR Apply Multi Upscale",
-    "_meta": {
-      "title": "🔍 CR Apply Multi Upscale"
-    }
-  },
-  "51": {
-    "inputs": {
-      "switch_1": "On",
-      "upscale_model_1": "RealESRGAN_x2plus.pth",
-      "rescale_factor_1": 1,
-      "switch_2": "On",
-      "upscale_model_2": "RealESRGAN_x2plus.pth",
-      "rescale_factor_2": 1,
-      "switch_3": "On",
-      "upscale_model_3": "RealESRNet_x4plus.pth",
-      "rescale_factor_3": 2
-    },
-    "class_type": "CR Multi Upscale Stack",
-    "_meta": {
-      "title": "🔍 CR Multi Upscale Stack"
-    }
-  },
   "52": {
     "inputs": {
       "rng_source": "gpu",
       "cfg_denoiser": false,
       "add_seed_noise": true,
-      "seed": 231506469238924,
+      "seed": 211591072195614,
       "weight": 0.015
     },
     "class_type": "Noise Control Script",
@@ -468,11 +332,11 @@
   },
   "54": {
     "inputs": {
-      "upscale_by": 1.2,
+      "upscale_by": 1.5,
       "tile_size": 512,
-      "tiling_strategy": "random",
-      "tiling_steps": 5,
-      "seed": 1017397082333840,
+      "tiling_strategy": "random strict",
+      "tiling_steps": 4,
+      "seed": 801248411781976,
       "denoise": 0.4,
       "use_controlnet": false,
       "tile_controlnet": "control_v11f1e_sd15_tile.bin",
@@ -481,17 +345,6 @@
     "class_type": "Tiled Upscaler Script",
     "_meta": {
       "title": "Tiled Upscaler Script"
-    }
-  },
-  "55": {
-    "inputs": {
-      "dimensions": "1024 x 1024  (square)",
-      "clip_scale": 2,
-      "batch_size": 1
-    },
-    "class_type": "SDXL Empty Latent Image (rgthree)",
-    "_meta": {
-      "title": "SDXL Empty Latent Image (rgthree)"
     }
   }
 }

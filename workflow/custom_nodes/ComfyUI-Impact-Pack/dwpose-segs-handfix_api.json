@@ -76,7 +76,7 @@
       "detect_face": false,
       "resolution_upscale_by": 1,
       "bbox_detector": "yolox_l.onnx",
-      "pose_estimator": "dw-ll_ucoco_384.onnx"
+      "pose_estimator": "dw-ll_ucoco_384_bs5.torchscript.pt"
     },
     "class_type": "DWPreprocessor_Provider_for_SEGS //Inspire",
     "_meta": {
@@ -119,7 +119,7 @@
   },
   "22": {
     "inputs": {
-      "seed": 385297710289256,
+      "seed": 385297710289254,
       "steps": 20,
       "cfg": 8,
       "sampler_name": "euler",
@@ -261,6 +261,69 @@
       "title": "DetailerDebug (SEGS/pipe)"
     }
   },
+  "52:0": {
+    "inputs": {
+      "ckpt_name": "sd15/majicmixRealistic-v7.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "52:1": {
+    "inputs": {
+      "text": "1girl sitting, cafe terrace",
+      "clip": [
+        "52:0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "52:2": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "52:0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "52:3": {
+    "inputs": {
+      "model": [
+        "52:0",
+        0
+      ],
+      "clip": [
+        "52:0",
+        1
+      ],
+      "vae": [
+        "52:0",
+        2
+      ],
+      "positive": [
+        "52:1",
+        0
+      ],
+      "negative": [
+        "52:2",
+        0
+      ]
+    },
+    "class_type": "ToBasicPipe",
+    "_meta": {
+      "title": "ToBasicPipe"
+    }
+  },
   "53:0": {
     "inputs": {
       "ckpt_name": "sd15/DreamShaper_v8.safetensors"
@@ -316,69 +379,6 @@
       ],
       "negative": [
         "53:2",
-        0
-      ]
-    },
-    "class_type": "ToBasicPipe",
-    "_meta": {
-      "title": "ToBasicPipe"
-    }
-  },
-  "52:0": {
-    "inputs": {
-      "ckpt_name": "sd15/DreamShaper_v8.safetensors"
-    },
-    "class_type": "CheckpointLoaderSimple",
-    "_meta": {
-      "title": "Load Checkpoint"
-    }
-  },
-  "52:1": {
-    "inputs": {
-      "text": "1girl sitting, cafe terrace",
-      "clip": [
-        "52:0",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "52:2": {
-    "inputs": {
-      "text": "text, watermark",
-      "clip": [
-        "52:0",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "52:3": {
-    "inputs": {
-      "model": [
-        "52:0",
-        0
-      ],
-      "clip": [
-        "52:0",
-        1
-      ],
-      "vae": [
-        "52:0",
-        2
-      ],
-      "positive": [
-        "52:1",
-        0
-      ],
-      "negative": [
-        "52:2",
         0
       ]
     },

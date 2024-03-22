@@ -26,19 +26,14 @@
           ],
           "slot_index": 0,
           "widget": {
-            "name": "text_g",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_G"
-              }
-            ]
+            "name": "text_g"
           }
         }
       ],
       "title": "Negative Prompt",
-      "properties": {},
+      "properties": {
+        "Run widget replace on values": false
+      },
       "widgets_values": [
         "nsfw, bad face, lowres, low quality, worst quality, low effort, watermark, signature, ugly, poorly drawn "
       ]
@@ -66,20 +61,15 @@
             52
           ],
           "widget": {
-            "name": "text_g",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_G"
-              }
-            ]
+            "name": "text_g"
           },
           "slot_index": 0
         }
       ],
       "title": "Positive Prompt",
-      "properties": {},
+      "properties": {
+        "Run widget replace on values": false
+      },
       "widgets_values": [
         "anime screen cap 1girl standing at classroom, looking at viewer, in school uniform, (solo), teen age, smile, long hair, upper body, trending on pixiv, 8k wallpaper, beautiful face"
       ]
@@ -139,7 +129,7 @@
         "1": 262.6287841796875
       },
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -153,14 +143,7 @@
           "type": "STRING",
           "link": 51,
           "widget": {
-            "name": "text_g",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_G"
-              }
-            ]
+            "name": "text_g"
           }
         },
         {
@@ -168,14 +151,7 @@
           "type": "STRING",
           "link": 52,
           "widget": {
-            "name": "text_l",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_L"
-              }
-            ]
+            "name": "text_l"
           }
         }
       ],
@@ -216,7 +192,7 @@
         "1": 270.0000305175781
       },
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -230,14 +206,7 @@
           "type": "STRING",
           "link": 55,
           "widget": {
-            "name": "text_g",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_G"
-              }
-            ]
+            "name": "text_g"
           }
         },
         {
@@ -245,14 +214,7 @@
           "type": "STRING",
           "link": 57,
           "widget": {
-            "name": "text_l",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_L"
-              }
-            ]
+            "name": "text_l"
           },
           "slot_index": 2
         }
@@ -403,45 +365,6 @@
       ]
     },
     {
-      "id": 59,
-      "type": "LoadImage",
-      "pos": [
-        -395,
-        380
-      ],
-      "size": {
-        "0": 428.49603271484375,
-        "1": 442.3898620605469
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            104
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "canny1.png",
-        "image"
-      ]
-    },
-    {
       "id": 61,
       "type": "ImageScale",
       "pos": [
@@ -453,7 +376,7 @@
         "1": 130
       },
       "flags": {},
-      "order": 5,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -495,7 +418,7 @@
         "1": 98
       },
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -528,7 +451,7 @@
         "Node name for S&R": "CheckpointLoaderSimple"
       },
       "widgets_values": [
-        "sd_xl_base_1.0_0.9vae.safetensors"
+        "sdxl/sd_xl_base_1-0.safetensors"
       ]
     },
     {
@@ -572,11 +495,50 @@
         "Node name for S&R": "LLLiteLoader"
       },
       "widgets_values": [
-        "controllllite_v01032064e_sdxl_canny_anime.safetensors",
+        "kohya_controllllite_xl_depth.safetensors",
         1,
         0,
         0,
         0
+      ]
+    },
+    {
+      "id": 59,
+      "type": "LoadImage",
+      "pos": [
+        -395,
+        380
+      ],
+      "size": {
+        "0": 428.49603271484375,
+        "1": 442.3898620605469
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            104
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "background_1024_1024.png",
+        "image"
       ]
     }
   ],

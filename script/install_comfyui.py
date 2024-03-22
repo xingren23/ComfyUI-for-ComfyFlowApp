@@ -39,6 +39,7 @@ custom_nodes_repos = [
   "https://github.com/pythongosssss/ComfyUI-Custom-Scripts",
   "https://github.com/jags111/efficiency-nodes-comfyui",
   "https://github.com/xingren23/ComfyUI-Impact-Pack Main",
+  "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
   "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
   "https://github.com/wolfden/ComfyUi_PromptStylers",
   "https://github.com/AIrjen/OneButtonPrompt",
@@ -48,13 +49,15 @@ custom_nodes_repos = [
   "https://github.com/adieyal/comfyui-dynamicprompts",
   "https://github.com/WASasquatch/was-node-suite-comfyui",
   "https://github.com/twri/sdxl_prompt_styler",
-  "https://github.com/kohya-ss/ControlNet-LLLite-ComfyUI",
+  "https://github.com/xingren23/ControlNet-LLLite-ComfyUI",
   "https://github.com/huchenlei/ComfyUI-layerdiffuse",
   "https://github.com/BlenderNeko/ComfyUI_Noise master",
   "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
   "https://github.com/chflame163/ComfyUI_LayerStyle",
   "https://github.com/Fannovel16/comfyui_controlnet_aux",
+  "https://github.com/xingren23/ComfyUI-CLIPSeg",
 ]
+
 
 # clone or update repos
 def clone_repos(repos, clean=True):
@@ -111,5 +114,9 @@ if __name__ == "__main__":
   
   install_comfyui()
   install_custom_nodes()
+
+  # copy config to custom_nodes
+  print("Copying config to custom_nodes")
+  shutil.copytree("config", f"{COMFYUI_PATH}/custom_nodes/", dirs_exist_ok=True)
 
   print("Done")

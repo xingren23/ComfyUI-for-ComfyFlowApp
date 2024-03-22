@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "seed": 394273344270416,
+      "seed": 677211819324582,
       "steps": 26,
       "cfg": 8,
       "sampler_name": "dpmpp_3m_sde_gpu",
@@ -172,7 +172,7 @@
   },
   "39": {
     "inputs": {
-      "clip_name": "openclip_vit_bigg14_sdxl.safetensors"
+      "clip_name": "ipadapter_image_encoder_sdxl.safetensors"
     },
     "class_type": "CLIPVisionLoader",
     "_meta": {

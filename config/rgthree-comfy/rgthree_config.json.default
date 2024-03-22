@@ -1,0 +1,36 @@
+// COPY THIS FILE BEFORE MAKING CHANGES TO: rgthree_config.json
+{
+  "log_level": "WARN",
+  "features": {
+    "patch_recursive_execution": false,
+    "show_alerts_for_corrupt_workflows": false,
+    "monitor_for_corrupt_links": false,
+    "menu_queue_selected_nodes": true,
+    "menu_auto_nest": {
+      "subdirs": null,
+      "threshold": 20
+    },
+    "progress_bar": {
+      "enabled": true,
+      "height": 16,
+      "position": "top"
+    }
+  },
+  "nodes": {
+    "reroute": {
+      "default_width": 40,
+      "default_height": 30,
+      "default_resizable": false,
+      "default_layout": ["Left", "Right"],
+      "fast_reroute": {
+        "enabled": true,
+        "key_create_while_dragging_link" : "Shift + R",
+        "key_rotate": "Shift + A",
+        "key_resize": "Shift + X",
+        "key_move": "Shift + Z",
+        "key_connections_input": "Shift + S",
+        "key_connections_output": "Shift + D"
+      }
+    }
+  }
+}

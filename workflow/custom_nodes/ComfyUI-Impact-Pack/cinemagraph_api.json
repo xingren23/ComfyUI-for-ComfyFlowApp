@@ -85,7 +85,7 @@
       "denoise": 0.8,
       "refiner_ratio": 0.2,
       "image_frames": [
-        "78",
+        "76",
         0
       ],
       "segs": [
@@ -135,7 +135,7 @@
       "feather": 5,
       "alpha": 255,
       "image": [
-        "78",
+        "76",
         0
       ],
       "segs": [
@@ -188,44 +188,12 @@
   },
   "76": {
     "inputs": {
-      "image": "background_512_512.jpg",
+      "image": "1344x768_beach.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
     "_meta": {
       "title": "Load Image"
-    }
-  },
-  "78": {
-    "inputs": {
-      "batch_size": 16,
-      "mode": "simple",
-      "image": [
-        "86",
-        0
-      ]
-    },
-    "class_type": "ChangeImageBatchSize //Inspire",
-    "_meta": {
-      "title": "Change Image Batch Size (Inspire)"
-    }
-  },
-  "86": {
-    "inputs": {
-      "width": 512,
-      "height": 512,
-      "interpolation": "lanczos",
-      "keep_proportion": false,
-      "condition": "always",
-      "multiple_of": 0,
-      "image": [
-        "76",
-        0
-      ]
-    },
-    "class_type": "ImageResize+",
-    "_meta": {
-      "title": "🔧 Image Resize"
     }
   }
 }

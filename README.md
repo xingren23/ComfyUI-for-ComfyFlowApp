@@ -36,6 +36,17 @@ The ComfyUI for ComfyFlowApp is a version maintained by ComfyFlowApp, which incl
 
 ## How to use
 
+we only test comfyui-for-comfyflowapp on ubuntu(wsl) with N
+
+* install, use conda to manage python env
+```
+conda create -n comfyui
+conda activate comfyui
+git clone https://github.com/xingren23/ComfyUI-for-ComfyFlowApp
+cd ComfyUI-for-ComfyFlowApp
+pip install -r requirements.txt
+```
+
 * install comfyui and custom nodes, and then install packages required
 ```python
 python script/install_comfyui.py
@@ -101,3 +112,8 @@ https://github.com/comfyanonymous/ComfyUI_examples
 
 https://huggingface.co/ByteDance/SDXL-Lightning
 https://huggingface.co/ByteDance/AnimateDiff-Lightning
+
+
+## Credits
+
+[ComfyUI](https://github.com/comfyanonymous/ComfyUI)

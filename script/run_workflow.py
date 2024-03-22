@@ -32,46 +32,46 @@ def get_history(prompt_id):
         return json.loads(response.read())
 
 def run_workflow_api(file):
-    print(f"Run workflow {file}")
-    with open(file, "r") as f:
-        try:
-          start = time.time()
-          prompt = json.load(f)
-          prompt_id = queue_prompt(prompt)['prompt_id']
-          output_images = {}
+    try:
+      start = time.time()
+      print(f"Run workflow {file}")
+      with open(file, "r") as f:
+        prompt = json.load(f)
+        prompt_id = queue_prompt(prompt)['prompt_id']
+        output_images = {}
 
-          ws = websocket.WebSocket()
-          ws.connect("ws://{}/ws?clientId={}".format(COMFYUI_SERVER_ADDRESS, client_id))
-          while True:
-              out = ws.recv()
-              if isinstance(out, str):
-                  message = json.loads(out)
-                  print("recv ", message)
-                  if message['type'] == 'executing':
-                      data = message['data']
-                      if data['node'] is None and data['prompt_id'] == prompt_id:
-                          end = time.time()
-                          print(f"websocket_api|{file}|{round(end-start, 2)}|Success|{prompt_id}")
-                          break #Execution is done
-              else:
-                  continue #previews are binary data
+        ws = websocket.WebSocket()
+        ws.connect("ws://{}/ws?clientId={}".format(COMFYUI_SERVER_ADDRESS, client_id))
+        while True:
+          out = ws.recv()
+          if isinstance(out, str):
+            message = json.loads(out)
+            print("recv ", message)
+            if message['type'] == 'executing':
+              data = message['data']
+              if data['node'] is None and data['prompt_id'] == prompt_id:
+                end = time.time()
+                print(f"websocket_api|{file}|{round(end-start, 2)}|Success|{prompt_id}")
+                break #Execution is done
+          else:
+            continue #previews are binary data
 
-          history = get_history(prompt_id)[prompt_id]
-          for o in history['outputs']:
-              for node_id in history['outputs']:
-                  node_output = history['outputs'][node_id]
-                  if 'images' in node_output:
-                    images_output = []
-                    for image in node_output['images']:
-                      image_data = get_image(image['filename'], image['subfolder'], image['type'])
-                      images_output.append(image_data)
-                    output_images[node_id] = images_output
+        history = get_history(prompt_id)[prompt_id]
+        for o in history['outputs']:
+          for node_id in history['outputs']:
+            node_output = history['outputs'][node_id]
+            if 'images' in node_output:
+              images_output = []
+              for image in node_output['images']:
+                image_data = get_image(image['filename'], image['subfolder'], image['type'])
+                images_output.append(image_data)
+              output_images[node_id] = images_output
 
-          return output_images
-        except Exception as e:
-          end = time.time()
-          # 保留2为小数
-          print(f"websocket_api|{file}|{round((end-start), 2)}|Error|{e}")
+        return output_images
+    except Exception as e:
+      end = time.time()
+      # 保留2为小数
+      print(f"websocket_api|{file}|{round((end-start), 2)}|Error|{e}")
 
 def run_path_workflow_api(path):
   # loop dir to run all api file
@@ -87,14 +87,16 @@ def run_path_workflow_api(path):
     # chedck is dir
     elif os.path.isdir(os.path.join(path, file)):
       run_path_workflow_api(os.path.join(path, file))
+  print(f"Run all workflow in {path} done")
 
 def run_files_workflow_api(workflow_files):
   print(f"Run workflow {workflow_files}")
   for line in workflow_files:
     file = line.strip()
-    print(f"Run error workflow {file}")
+    print(f"Run workflow {file}")
     if file.endswith("_api.json"):
       run_workflow_api(file)
+  print(f"Run workflow {workflow_files} done")
 
 if __name__ == "__main__":
 

@@ -120,7 +120,7 @@
   },
   "59": {
     "inputs": {
-      "image": "female.png",
+      "image": "background_1024_1024.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -133,7 +133,7 @@
       "upscale_method": "bilinear",
       "width": 1024,
       "height": 1024,
-      "crop": "center",
+      "crop": "disabled",
       "image": [
         "59",
         0
@@ -146,7 +146,7 @@
   },
   "62": {
     "inputs": {
-      "model_name": "kohya_controllllite_xl_canny.safetensors",
+      "model_name": "kohya_controllllite_xl_depth.safetensors",
       "strength": 1,
       "steps": 0,
       "start_percent": 0,
