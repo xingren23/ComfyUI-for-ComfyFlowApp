@@ -42,12 +42,12 @@ RUN set -eux; \
 # run instructions as user
 USER ${USER_UID}:${USER_GID}
 
-WORKDIR /workspace/ComfyUI
+WORKDIR /workspace/comfyui
 
 ENV PIP_CACHE_DIR="/cache/pip"
-ENV VIRTUAL_ENV=/workspace/ComfyUI/venv
-ENV VIRTUAL_ENV_CUSTOM=/workspace/ComfyUI/custom_venv
-ENV TRANSFORMERS_CACHE="/workspace/ComfyUI/.cache/transformers"
+ENV VIRTUAL_ENV=/workspace/comfyui/venv
+ENV VIRTUAL_ENV_CUSTOM=/workspace/comfyui/custom_venv
+ENV TRANSFORMERS_CACHE="/workspace/comfyui/.cache/transformers"
 
 # create cache directory
 RUN mkdir -p ${TRANSFORMERS_CACHE}
@@ -68,7 +68,7 @@ RUN --mount=type=cache,target=/cache/,uid=${USER_UID},gid=${USER_GID} \
 
 
 COPY --chown=${USER_UID}:${USER_GID} . .
-RUN pip install -r custom_nodes/requirements_custom_nodes.txt
+RUN pip install -r custom_nodes/custom_nodes_requirements.txt
 
 # default environment variables
 ENV COMFYUI_ADDRESS=0.0.0.0

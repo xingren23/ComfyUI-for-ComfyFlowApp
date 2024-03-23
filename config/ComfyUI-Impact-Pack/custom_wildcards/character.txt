@@ -1,0 +1,4 @@
+1 girl, adult {__race__|} woman, {freckles,|} __eyecolor__ eyes, __hair-color__ __hair-female__,
+1 girl, adult (elven:0.7) woman, {freckles,|} __eyecolor__ eyes, __hair-color__ __hair-female__,
+(1man, {muscular|masculine|thin} adult {__race__|} male:1.2),  __eyecolor__ eyes, __hair-color__ hair, __hair-male__,
+(1man, {wrinkled face,|} old {__race__|} male:1.2), {wise,|frail,|}  __eyecolor__ eyes, {white|gray|graying|__hair-color__} hair, __hair-male__,

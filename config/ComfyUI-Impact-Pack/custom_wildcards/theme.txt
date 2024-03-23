@@ -1,0 +1,100 @@
+renaissance
+victorian
+cottagecore
+high fantasy medieval
+{sinister|} {(DarkFantasy:0.8),|} dark fantasy
+<lora:VampiricTech:0.6>, vamptech {,vampiric|}
+<lora:runemagic:0.4>, {magic_circle,} Rune_Magic
+<lora:GlowingRunesAIv4:0.6>, {GlowingRunesAI_red|GlowingRunesAI_paleblue|GlowingRunesAI_green|GlowingRunes_purple|GlowingRunes_yellow|GlowingRunes_pink}, glowing runes
+<lora:kVoidEnergy-000001:0.5>, V0id3nergy, void
+<lora:ElementalMagicAIv2:0.6>, {IceMagicAI|fireMagicAI|LightningMagicAI}
+<lora:ChronomancyAI:0.5>, ChronomancyAI, chronomancy
+<lora:AbsinthePunkAI:0.5>, AbsinthePunkAI
+<lora:GothicPunkAI:0.5>, gothicpunkai, gothic
+<lora:GothicHorrorAI:0.5>, gothichorrorai, gothic
+<lora:WitchcraftPunkAI:0.5>, WitchcraftPunkAI
+<lyco:HorrorBundlev4:0.4>, BoneyardAI, bone
+<lora:DruidMagicAI:0.5>, DruidMagicAI, druidic
+<lora:RootsBranchesAIv5:0.4>, RootsBranchesAI
+<lora:AngelicAI:0.5>, AngelicAI
+<lora:bronzepunkai:0.5>, bronzepunkai, bronze
+<lora:baroqueAI:0.3>, baroqueAI, baroque
+{<lora:ArtDecoAI:0.3>, ArtDecoAI,|} 1920s art deco
+<lora:GrecoRomaPunkAI:0.6>, {romapunkai|grecopunkai}
+<lyco:CulturePunkBundle-000007:0.5>, OldEgyptAI, ancient egyptian
+<lora:SamuraiPunkAIv3:0.6>, SamuraiPunkAI
+<lora:MongolPunkAI:0.6>, MongolPunkAI, mongolian {steppe nomad|}
+<lora:1001ArabianNightsV3:0.6>, 1001ArabianNights
+<lora:MahabharataPunkAI:0.6>, MahabharataPunkAI
+<lyco:CulturePunkBundle-000007:0.5>, fairytaleai, fairytale
+<lyco:CulturePunkBundle-000007:0.3>, piratepunkai, pirate
+<lyco:CulturePunkBundle-000007:0.5>, vikingpunkai, norse viking
+<lyco:CulturePunkBundle-000007:0.5>, tikiai, tiki
+<lyco:CulturePunkBundle-000007:0.5>, zulupunkai, zulu
+<lora:totempunkai_v20:0.5>, totempunkai
+<lora:CeltPunkAI:0.5>, CeltPunkAI, {tribal|} {barbarian|} celtic
+<lora:lora:Dra9onScaleAI:0.5>, Dr490nSc4leAI
+<lora:BohoAI:0.6>, bohoai, boho
+<lora:StonepunkAI:0.6>, stonepunkAI, stone
+<lyco:FiveDecorsAIx3:0.4>, ivorygoldai, ivory-gold
+<lyco:FiveDecorsAIx3:0.6> EbonyGoldAI
+<lyco:FiveDecorsAIx3:0.6>, stainedglassai, stained glass
+<lyco:FiveDecorsAIx3:0.5>, crystallineAI, crystalline
+<lyco:FiveDecorsAIx3:0.4>, GemstoneAI, gemstone
+<lyco:FiveDecorsAIx3:0.6>, AzulejoAI, azulejo
+<lyco:FiveDecorsAIx3:0.6>, CircuitBoardAI, electronic
+<lora:smoke_model:0.4>, smokestyle
+<lora:AlchemyPunkAI:0.6>, alchemypunkai
+<lora:MusketPunkAI:0.6>, MusketPunkAI
+<lyco:SteamPunkBundle2v:0.5>, GasLampFantasyAI
+<lyco:SteamPunkBundle2v:0.5>, CoalPunkAI, {coal-powered|}
+<lyco:SteamPunkBundle2v:0.5>, AetherpunkAI
+<lyco:SteamPunkBundle2v:0.5>, ManyPipesAI
+<lyco:SteamPunkBundle2v:0.4>, {steampunkai, steampunk|cogpunkai, cogpunk}
+<lyco:PunkBundleAI:0.4>, dieselpunkai, {ww2|1940s} dieselpunk
+<lora:RetroFuturismAI:0.5>, RetroFuturismAI, retro-futurism
+<lora:1970RetroFuturism:0.6>, 1970retrofuturism, 1970s
+<lora:DwemerTech:0.7> dwemertech{, ancient|}{, brass|}
+<lora:BiophyllTech:0.6>, {fully-organic,|bio,|} {bioluminescent,|} BiophyllTech
+<lora:SolarpunkAI:0.5>, {SolarpunkAI|green-powered}, solarpunk
+<lyco:PunkBundleAI:0.4>, {valvepunkai|teslapunkai}, retro-futuristic
+<lora:AntimatterTech-20:0.5>, antitech, antimatter
+<lora:NodesTech:0.6>, {data-space,|} {holographic,|} NodesTech
+<lora:GlassTech-20:0.6>, glasstech, glass
+<lora:NeoFuturisticTech-20:0.6>, {sleek,|} neotech
+<lyco:HorrorBundlev4:0.4>, 1nf3rnalAI, infernal
+<lora:MagmaTech:0.5>, {lava,|} MagmaTech
+<lora:FrostRaceTech:0.5>, {cryogenic,|} frostracetech
+<lora:postapocalypseAI:0.4>, postapoAI, post-apocalyptic {dark dystopian|}
+<lora:ConstructionyardAIV3:0.6>, constructionyardai
+<lora:TerranAIv2:0.5>, TerranAI, starcraft
+<lora:CnCGDIAIv2:0.6>, CnCGDIAI
+<lora:CnCNODAIv2:0.6>, CnCNODAI
+<lora:Neonpunkai-8:0.4>, Neonpunkai, neon
+<lora:CyberPunkAI:0.6>, {neon,|} CyberpunkAI
+<lora:Unholy:0.5>, Sc3pt4, scifi
+<lora:BrutalistTech:0.6>, {scifi,|} {cement,|} brutaltech
+<lora:Atompunk v.3:0.6>, atompunk
+<lora:SovietPunkAIv2:0.6>, sovietpunkai, soviet {communist|}
+tribal {hawaian|mayan|aztec|polynesian}
+imperial chinese
+feudal japan
+1980s futuristic synthwave, bladerunner
+1980s synthwave
+fallout
+bioshock {infinite|}
+hogwarts
+21st century modern
+western frontier
+tropical jungle
+natural forest
+arid desert middle-eastern
+starwars
+startrek
+masseffect
+madmax
+warhammer 40k
+naval marine military
+militaristic authoritarian dictatorship
+dystopian futuristic
+(space_style:0.6), cosmic outer space

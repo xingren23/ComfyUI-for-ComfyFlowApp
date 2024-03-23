@@ -3,7 +3,7 @@ import shutil
 import subprocess
 import os
 
-COMFYUI_PATH = os.environ.get("COMFYUI_PATH", "ComfyUI")
+COMFYUI_PATH = os.environ.get("COMFYUI_PATH", "../comfyui")
 
 comfyui_repo = "https://github.com/comfyanonymous/ComfyUI"
 
@@ -73,7 +73,7 @@ def clone_repos(repos, clean=True):
 
     # check if the repo is already cloned
     try:
-      print(f"Cloning {repo} {branch} to ComfyUI/custom_nodes/{repo.split('/')[-1]}")
+      print(f"Cloning {repo} {branch} to {COMFYUI_PATH}/custom_nodes/{repo.split('/')[-1]}")
       Repo.clone_from(repo, f"{COMFYUI_PATH}/custom_nodes/{repo.split('/')[-1]}", single_branch=True, branch=branch, recursive=True)
     except:
       print(f"Clone {item} error")
@@ -111,11 +111,24 @@ def install_custom_nodes(clean=True):
 
 if __name__ == "__main__":
   
-  install_comfyui()
-  install_custom_nodes()
+  install_comfyui(clean=False)
+  install_custom_nodes(clean=False)
 
   # copy config to custom_nodes
-  print("Copying config to custom_nodes")
+  print(f"Copying config to {COMFYUI_PATH}/custom_nodes")
   shutil.copytree("config", f"{COMFYUI_PATH}/custom_nodes/", dirs_exist_ok=True)
+
+  # copy custom_nodes_requirements to {COMFYUI_PATH}/custom_nodes
+  print("Copying custom_nodes_requirements.txt to {COMFYUI_PATH}/custom_nodes")
+  shutil.copy("script/custom_nodes_requirements.txt", f"{COMFYUI_PATH}/custom_nodes/")
+
+  # copy input to comfyui/input
+  print(f"Copying input to {COMFYUI_PATH}/input")
+  shutil.copytree("input", f"{COMFYUI_PATH}/input/", dirs_exist_ok=True)
+
+  # copy Dockerfile to {COMFYUI_PATH}
+  print(f"Copying Dockerfile to {COMFYUI_PATH}")
+  shutil.copy("Dockerfile", f"{COMFYUI_PATH}/")
+  shutil.copy(".dockerignore", f"{COMFYUI_PATH}/")
 
   print("Done")

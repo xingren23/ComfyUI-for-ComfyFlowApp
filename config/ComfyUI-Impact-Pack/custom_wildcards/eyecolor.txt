@@ -1,0 +1,21 @@
+hazel
+green
+brown
+black
+grey
+purple
+pink
+red
+silver
+yellow
+turquoise
+aquamarine
+ruby
+coral
+dark brown
+jade
+teal
+light blue
+blue
+grey-blue
+amber

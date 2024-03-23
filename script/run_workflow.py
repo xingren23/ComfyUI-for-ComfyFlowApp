@@ -11,8 +11,8 @@ import time
 import shutil
 import argparse
 
-COMFYUI_PATH = os.environ.get("COMFYUI_PATH", "ComfyUI")
-COMFYUI_SERVER_ADDRESS = os.environ.get("COMFYUI_SERVER_ADDRESS", "127.0.0.1:8888")
+COMFYUI_PATH = os.environ.get("COMFYUI_PATH", "comfyui")
+COMFYUI_SERVER_ADDRESS = os.environ.get("COMFYUI_SERVER_ADDRESS", "127.0.0.1:8188")
 client_id = str(uuid.uuid4())
 
 def queue_prompt(prompt):
@@ -104,9 +104,6 @@ if __name__ == "__main__":
   parser.add_argument('--files', type=str, help='files, workflow file separated by comma')
   parser.add_argument('--path', type=str, help='path, run all workflow api json in the path')
   args = parser.parse_args()
-
-  # copy input to comfyui/input
-  shutil.copytree("workflow/input", f"{COMFYUI_PATH}/input", dirs_exist_ok=True)
 
   if args.files:
     workflow_files = args.files.split(",")

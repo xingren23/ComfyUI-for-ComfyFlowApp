@@ -1,5 +1,5 @@
 {
-    "run_requirements": true,
+    "run_requirements": false,
     "suppress_uncomfy_warnings": true,
     "show_startup_junk": true,
     "show_inspiration_quote": true,
@@ -18,6 +18,6 @@
         "avc1": ".mp4",
         "h264": ".mkv"
     },
-    "wildcards_path": "/workspace/ComfyUI-for-ComfyFlowApp/ComfyUI/custom_nodes/was-node-suite-comfyui/wildcards",
-    "wildcard_api": true
+    "wildcards_path": "/workspace/comfyui/custom_nodes/was-node-suite-comfyui/wildcards",
+    "wildcard_api": false
 }

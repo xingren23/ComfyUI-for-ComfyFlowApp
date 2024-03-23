@@ -1,0 +1,155 @@
+character:
+  - "{(muscular)|feminine|skinny|(chubby:0.8)|(fat:0.9)} (adult __origin__:1.2) woman, {freckles,|} __eyecolor__ eyes, __hair-color__ __hair-female__"
+  - "(mature old __origin__:1.3) woman, (skindentation:1.3),  (detailed wrinkled face),  {(muscular:1.4),|(very skinny:1.3),|(chubby:1.3),|(very fat:1.3),|} __eyecolor__ eyes, {white|gray|graying|__hair-color__} hair, __hair-female__"
+  - "{muscular|masculine|thin|(chubby:0.9)|(fat:0.9)} (adult __origin__ man:1.1),  __eyecolor__ eyes, __hair-color__ hair, __hair-male__"
+  - "(mature old __origin__:1.3) man, (skindentation:1.3),  (detailed wrinkled face), {muscular|(skinny:1.1)|(chubby:1.1)|(fat:1.1)}, __eyecolor__ eyes, {white|gray|graying|__hair-color__} hair, __hair-male__"
+
+origin:
+  - australian aborigen
+  - american
+  - british
+  - chinese
+  - czech
+  - ethiopian
+  - french
+  - german
+  - hungarian
+  - indian
+  - indonesian
+  - irish
+  - italian
+  - japanese
+  - moroccan
+  - namibian
+  - nigerian
+  - palestinian
+  - polish
+  - portuguese
+  - russian
+  - spanish
+  - swedish
+
+hair-color:
+  - auburn
+  - black
+  - blonde
+  - brown
+  - chestnut
+  - copper
+  - dark blonde
+  - dark brown
+  - dark red
+  - gray
+  - light blonde
+  - light brown
+  - medium blonde
+  - medium brown
+  - natural blonde
+  - platinum blonde
+  - silver
+  - white
+  - yellow
+  - ginger
+
+hair-male:
+  - beard
+  - blunt cut
+  - buzz cut
+  - clean-shaven
+  - comb over
+  - drop fade
+  - fade
+  - fade with beard
+  - fade with goatee
+  - fade with mustache
+  - fade with sideburns
+  - french crop
+  - goatee
+  - high-fade
+  - layer cut
+  - long beard
+  - long hair
+  - long mustache
+  - low-fade
+  - medium hair
+  - mid-fade
+  - mustache
+  - mutton chops
+  - pompadour
+  - quiff
+  - razor cut
+  - scissor cut
+  - shaggy hair
+  - shaved head
+  - short back and sides
+  - short beard
+  - short hair
+  - short mustache
+  - side part
+  - side-swept fringe
+  - sideburns
+  - slick back
+  - spiky hair
+  - straight hair
+  - taper fade
+  - temp fade
+  - textured crop
+  - textured fringe
+  - thick beard
+  - thin beard
+  - undercut
+
+hair-female:
+  - beach waves hair
+  - blowout hair
+  - braided hairstyle
+  - bun hair
+  - drill hair
+  - dutch braid
+  - fishtail braid
+  - fringe hair
+  - hair flaps
+  - half-up half-down hairstyle
+  - layered hair
+  - lob hair
+  - long hair
+  - medium hair
+  - messy hair
+  - ponytail
+  - prom hairstyle
+  - quiff hair
+  - razor cut hair
+  - shag hair
+  - shaggy hair
+  - short hair
+  - sleek hair
+  - straight hair
+  - textured hair
+  - twin drills hair
+  - updo hairstyle
+  - waterfall braid
+  - wavy hair
+  - wedge cut hair
+
+eyecolor:
+  - hazel
+  - green
+  - brown
+  - black
+  - grey
+  - purple
+  - pink
+  - red
+  - silver
+  - yellow
+  - turquoise
+  - aquamarine
+  - ruby
+  - coral
+  - dark brown
+  - jade
+  - teal
+  - light blue
+  - blue
+  - grey-blue
+  - amber

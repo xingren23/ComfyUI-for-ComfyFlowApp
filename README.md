@@ -44,7 +44,7 @@ Instead of using ComfyUI-Manager to install missing nodes, the project carefully
 
 ## How to use
 
-we only test comfyui-for-comfyflowapp on ubuntu(wsl) with N
+we only test comfyui-for-comfyflowapp on ubuntu(wsl) with NVIDIA GPUs
 
 * install, use conda to manage python env
 ```
@@ -55,12 +55,12 @@ cd ComfyUI-for-ComfyFlowApp
 pip install -r requirements.txt
 ```
 
-* install comfyui and custom nodes, and then install packages required
+* install comfyui and custom nodes , and then install packages required, default install path: /workspace/comfyui, you could change it with env COMFYUI_PATH
 ```python
 python script/install_comfyui.py
 ```
 
-* start comfyui, http://localhost:8888 
+* start comfyui, http://localhost:8888 , check the log in /workspace/comfyui/comfyui.log
 ```bash
 sh bin/start_comfyui.sh
 ```
@@ -74,6 +74,27 @@ sh bin/stop_comfyui.sh
 ```
 sh run_workflow.sh
 ```
+
+## Docker
+
+Building images manually
+You can build a docker image with the Dockerfile in this repo.
+
+Specify PYTORCH_INSTALL_ARGS build arg with one of the PyTorch commands above to build for AMD or NVIDIA GPUs.
+
+docker buildx --build-arg PYTORCH_INSTALL_ARGS="--index-url https://download.pytorch.org/whl/cu121" .
+
+docker buildx --build-arg PYTORCH_INSTALL_ARGS="--index-url https://download.pytorch.org/whl/rocm5.6" .
+
+docker buildx --build-arg PYTORCH_INSTALL_ARGS="--pre --index-url https://download.pytorch.org/whl/nightly/rocm5.7" .
+
+This dockerfile requires BuildKit to be enabled. If your docker does not support the buildx command, you can enable BuildKit by setting the DOCKER_BUILDKIT environment variable.
+
+DOCKER_BUILDKIT=1 docker build --build-arg PYTORCH_INSTALL_ARGS="--index-url https://download.pytorch.org/whl/cu121" .
+
+NOTE: For building the CPU-only image, it is recommended that you add the --cpu flag to the EXTRA_ARGS build arg:
+
+docker buildx --build-arg PYTORCH_INSTALL_ARGS="--index-url https://download.pytorch.org/whl/cpu" --build-arg EXTRA_ARGS=--cpu .
 
 
 ## Models
