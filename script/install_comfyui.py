@@ -25,7 +25,6 @@ def clone_comfyui(repo, clean=True):
 
 # custom nodes repo
 custom_nodes_repos = [
-  "https://github.com/spacepxl/ComfyUI-Image-Filters",
   "https://github.com/storyicon/comfyui_segment_anything",
   "https://github.com/BlenderNeko/ComfyUI_TiledKSampler master",
   "https://github.com/ssitu/ComfyUI_UltimateSDUpscale",

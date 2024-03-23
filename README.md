@@ -9,7 +9,6 @@ The ComfyUI for ComfyFlowApp is the official version maintained by ComfyFlowApp,
 
 Instead of using ComfyUI-Manager to install missing nodes, the project carefully picks the custom nodes and verifies that there are no conflicts between them.
 
-- [ComfyUI Image Filters](https://github.com/spacepxl/ComfyUI-Image-Filters)
 - [ComfyUI Segment Anything](https://github.com/storyicon/comfyui_segment_anything)
 - [ComfyUI TiledKSampler](https://github.com/BlenderNeko/ComfyUI_TiledKSampler)
 - [ComfyUI UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
