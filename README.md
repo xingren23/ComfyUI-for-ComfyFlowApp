@@ -22,7 +22,7 @@ Instead of using ComfyUI-Manager to install missing nodes, the project carefully
 - [ComfyUI Custom Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts)
 - [Efficiency Nodes ComfyUI](https://github.com/jags111/efficiency-nodes-comfyui)
 - [ComfyUI Impact Pack](https://github.com/xingren23/ComfyUI-Impact-Pack)
-- [ComfyUI-Inspire-Pack]("https://github.com/ltdrdata/ComfyUI-Inspire-Pack")
+- [ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack)
 - [ComfyUI Advanced ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet)
 - [ComfyUi PromptStylers](https://github.com/wolfden/ComfyUi_PromptStylers)
 - [OneButtonPrompt](https://github.com/AIrjen/OneButtonPrompt)
@@ -112,6 +112,7 @@ https://github.com/comfyanonymous/ComfyUI_examples
 ├── ComfyUI-Custom-Scripts
 ├── ComfyUI-Image-Filters
 ├── ComfyUI-Impact-Pack
+├── ComfyUI-Inspire-Pack
 ├── ComfyUI-VideoHelperSuite
 ├── ComfyUI-WD14-Tagger
 ├── ComfyUI-layerdiffuse
@@ -120,6 +121,7 @@ https://github.com/comfyanonymous/ComfyUI_examples
 ├── ComfyUI_InstantID
 ├── ComfyUI_LayerStyle
 ├── ComfyUI_Noise
+├── ComfyUI_TiledKSampler
 ├── ComfyUI_UltimateSDUpscale
 ├── ComfyUI_essentials
 ├── ComfyUi_NNLatentUpscale
@@ -134,7 +136,8 @@ https://github.com/comfyanonymous/ComfyUI_examples
 ├── efficiency-nodes-comfyui
 ├── rgthree-comfy
 ├── sdxl_prompt_styler
-└── was-node-suite-comfyui```
+└── was-node-suite-comfyui
+```
 
 * sdxl-lighting workflow
 

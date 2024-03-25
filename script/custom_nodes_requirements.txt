@@ -1,11 +1,10 @@
 ultralytics
-
 pymatting
 addict
 yapf
-insightface
 onnxruntime
 onnxruntime-gpu
+insightface>=0.7.3
 imageio-ffmpeg
 pandas
 numexpr
@@ -15,7 +14,7 @@ segment-anything
 scikit-image
 piexif
 scipy>=1.11.4
-dynamicprompts==0.30.2
+dynamicprompts>=0.30.2
 matplotlib
 cmake
 fairscale>=0.4.4
@@ -52,5 +51,5 @@ ftfy
 yacs
 trimesh[easy]
 albumentations
-matrix-client==0.4.0
+matrix-client>=0.4.0
 huggingface-hub

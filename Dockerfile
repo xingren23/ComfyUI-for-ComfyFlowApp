@@ -22,6 +22,7 @@ RUN \
 		apt-get update; \
 		apt-get install -y --no-install-recommends \
 			python3.10 \
+			python3-dev \
 			python3-pip \
 			python3-venv \
 			git \
@@ -30,7 +31,8 @@ RUN \
  			rsync \
 			ffmpeg \
 			libsm6 \
-			libxext6
+			libxext6 \
+			build-essential
 
 # Clean up to reduce image size
 RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
