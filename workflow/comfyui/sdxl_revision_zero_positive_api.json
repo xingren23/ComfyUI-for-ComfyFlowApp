@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "seed": 677211819324582,
+      "seed": 1089435080456223,
       "steps": 26,
       "cfg": 8,
       "sampler_name": "dpmpp_3m_sde_gpu",

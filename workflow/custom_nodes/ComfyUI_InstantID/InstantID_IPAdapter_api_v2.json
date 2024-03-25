@@ -8,7 +8,7 @@
       "scheduler": "karras",
       "denoise": 1,
       "model": [
-        "69",
+        "73",
         0
       ],
       "positive": [
@@ -76,7 +76,7 @@
   },
   "13": {
     "inputs": {
-      "image": "1344x768_hair.png",
+      "image": "1344x768_girl2.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -116,7 +116,7 @@
   },
   "39": {
     "inputs": {
-      "text": "comic character. graphic illustration, comic art, graphic novel art, vibrant, highly detailed",
+      "text": "",
       "clip": [
         "4",
         1
@@ -181,41 +181,11 @@
   },
   "68": {
     "inputs": {
-      "ipadapter_file": "ip-adapter-plus_sdxl_vit-h.safetensors"
+      "ipadapter_file": "ip-adapter-plus_sd15.safetensors"
     },
     "class_type": "IPAdapterModelLoader",
     "_meta": {
-      "title": "Load IPAdapter Model"
-    }
-  },
-  "69": {
-    "inputs": {
-      "weight": 0.45,
-      "noise": 0,
-      "weight_type": "original",
-      "start_at": 0,
-      "end_at": 1,
-      "unfold_batch": false,
-      "ipadapter": [
-        "68",
-        0
-      ],
-      "clip_vision": [
-        "70",
-        0
-      ],
-      "image": [
-        "71",
-        0
-      ],
-      "model": [
-        "60",
-        0
-      ]
-    },
-    "class_type": "IPAdapterApply",
-    "_meta": {
-      "title": "Apply IPAdapter"
+      "title": "IPAdapter Model Loader"
     }
   },
   "70": {
@@ -229,12 +199,41 @@
   },
   "71": {
     "inputs": {
-      "image": "1344x768_girl2.png",
+      "image": "1344x768_hair.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
     "_meta": {
       "title": "Load Image"
+    }
+  },
+  "73": {
+    "inputs": {
+      "weight": 1,
+      "weight_type": "linear",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "model": [
+        "60",
+        0
+      ],
+      "ipadapter": [
+        "68",
+        0
+      ],
+      "image": [
+        "71",
+        0
+      ],
+      "clip_vision": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
     }
   }
 }

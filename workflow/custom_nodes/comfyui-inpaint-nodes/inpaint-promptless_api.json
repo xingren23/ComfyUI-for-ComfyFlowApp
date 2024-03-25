@@ -62,7 +62,7 @@
   },
   "34": {
     "inputs": {
-      "image": "malepng.png",
+      "image": "mask1024 (1).png",
       "channel": "red",
       "upload": "image"
     },
@@ -84,7 +84,7 @@
   "36": {
     "inputs": {
       "model": [
-        "69",
+        "70",
         0
       ],
       "patch": [
@@ -103,7 +103,7 @@
   },
   "40": {
     "inputs": {
-      "seed": 302933236006491,
+      "seed": 705474531897521,
       "steps": 24,
       "cfg": 5,
       "sampler_name": "dpmpp_2m_sde_gpu",
@@ -136,11 +136,11 @@
       "blur": 255,
       "falloff": 11,
       "image": [
-        "45",
+        "33",
         0
       ],
       "mask": [
-        "45",
+        "33",
         1
       ]
     },
@@ -168,7 +168,7 @@
         0
       ],
       "mask": [
-        "45",
+        "33",
         1
       ]
     },
@@ -199,11 +199,11 @@
       "fill": "neutral",
       "falloff": 11,
       "image": [
-        "45",
+        "33",
         0
       ],
       "mask": [
-        "45",
+        "33",
         1
       ]
     },
@@ -214,17 +214,17 @@
   },
   "49": {
     "inputs": {
-      "seed": 824431729983443,
+      "seed": 399352840846363,
       "inpaint_model": [
         "52",
         0
       ],
       "image": [
-        "45",
+        "33",
         0
       ],
       "mask": [
-        "45",
+        "33",
         1
       ]
     },
@@ -297,7 +297,7 @@
       "y": 0,
       "resize_source": false,
       "destination": [
-        "45",
+        "33",
         0
       ],
       "source": [
@@ -305,7 +305,7 @@
         0
       ],
       "mask": [
-        "45",
+        "33",
         1
       ]
     },
@@ -320,7 +320,7 @@
     },
     "class_type": "IPAdapterModelLoader",
     "_meta": {
-      "title": "Load IPAdapter Model"
+      "title": "IPAdapter Model Loader"
     }
   },
   "68": {
@@ -332,34 +332,33 @@
       "title": "Load CLIP Vision"
     }
   },
-  "69": {
+  "70": {
     "inputs": {
-      "weight": 0.5,
-      "noise": 0,
-      "weight_type": "original",
+      "weight": 1,
+      "weight_type": "linear",
+      "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
-      "unfold_batch": false,
+      "model": [
+        "19",
+        0
+      ],
       "ipadapter": [
         "67",
+        0
+      ],
+      "image": [
+        "33",
         0
       ],
       "clip_vision": [
         "68",
         0
-      ],
-      "image": [
-        "45",
-        0
-      ],
-      "model": [
-        "19",
-        0
       ]
     },
-    "class_type": "IPAdapterApply",
+    "class_type": "IPAdapterAdvanced",
     "_meta": {
-      "title": "Apply IPAdapter"
+      "title": "IPAdapter Advanced"
     }
   }
 }
