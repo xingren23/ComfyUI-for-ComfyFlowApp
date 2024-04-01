@@ -1,0 +1,43 @@
+{
+  "1": {
+    "inputs": {
+      "detail_method": "VITMatte",
+      "detail_erode": 6,
+      "detail_dilate": 6,
+      "black_point": 0.01,
+      "white_point": 0.99,
+      "process_detail": true,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LayerMask: BiRefNetUltra",
+    "_meta": {
+      "title": "LayerMask: BiRefNetUltra"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "768x1344_dress.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

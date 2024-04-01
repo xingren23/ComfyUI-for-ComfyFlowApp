@@ -1,0 +1,43 @@
+{
+  "1": {
+    "inputs": {
+      "hdr_intensity": 0.5,
+      "shadow_intensity": 0.25,
+      "highlight_intensity": 0.75,
+      "gamma_intensity": 0.25,
+      "contrast": 0.1,
+      "enhance_color": 0.25,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LayerFilter: HDREffects",
+    "_meta": {
+      "title": "LayerFilter: HDR Effects"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "768x1344_dress.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
