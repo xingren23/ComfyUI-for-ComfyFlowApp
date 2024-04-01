@@ -81,7 +81,7 @@ def run_path_workflow_api(path):
     if os.path.isfile(os.path.join(path, file)):
       if file.endswith("_api.json"):
         run_workflow_api(os.path.join(path, file))
-      if file.index("disable") > 0:
+      if file.find("disable") > 0:
         print(f"Skip {file}")
       else:
         print(f"Skip {file}")
