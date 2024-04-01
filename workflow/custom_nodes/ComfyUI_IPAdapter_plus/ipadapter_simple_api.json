@@ -109,6 +109,7 @@
       "weight": 0.8,
       "start_at": 0,
       "end_at": 1,
+      "weight_type": "standard",
       "model": [
         "11",
         0

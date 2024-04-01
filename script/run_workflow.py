@@ -81,14 +81,15 @@ def run_path_workflow_api(path):
     if os.path.isfile(os.path.join(path, file)):
       if file.endswith("_api.json"):
         run_workflow_api(os.path.join(path, file))
-      if file.find("disable") > 0:
-        print(f"Skip {file}")
       else:
         print(f"Skip {file}")
     
     # chedck is dir
     elif os.path.isdir(os.path.join(path, file)):
-      run_path_workflow_api(os.path.join(path, file))
+      if os.path.join(path, file).endswith(".disable"):
+        print(f"Skip path {file}")
+      else:
+        run_path_workflow_api(os.path.join(path, file))
   print(f"Run all workflow in {path} done")
 
 def run_files_workflow_api(workflow_files):

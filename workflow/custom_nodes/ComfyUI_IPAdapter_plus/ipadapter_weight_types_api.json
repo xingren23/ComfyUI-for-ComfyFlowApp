@@ -121,6 +121,7 @@
       "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
+      "embeds_scaling": "V only",
       "model": [
         "4",
         0
@@ -227,6 +228,7 @@
       "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
+      "embeds_scaling": "V only",
       "model": [
         "4",
         0
@@ -315,6 +317,7 @@
       "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
+      "embeds_scaling": "V only",
       "model": [
         "4",
         0
@@ -403,6 +406,7 @@
       "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
+      "embeds_scaling": "V only",
       "model": [
         "4",
         0
@@ -491,6 +495,7 @@
       "combine_embeds": "concat",
       "start_at": 0,
       "end_at": 1,
+      "embeds_scaling": "V only",
       "model": [
         "4",
         0
