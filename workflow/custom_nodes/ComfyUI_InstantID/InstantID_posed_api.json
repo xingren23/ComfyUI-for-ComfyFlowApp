@@ -107,7 +107,7 @@
   },
   "38": {
     "inputs": {
-      "provider": "CPU"
+      "provider": "CUDA"
     },
     "class_type": "InstantIDFaceAnalysis",
     "_meta": {
@@ -185,7 +185,7 @@
   },
   "67": {
     "inputs": {
-      "image": "pose.png",
+      "image": "1344x768_girl2.png",
       "upload": "image"
     },
     "class_type": "LoadImage",

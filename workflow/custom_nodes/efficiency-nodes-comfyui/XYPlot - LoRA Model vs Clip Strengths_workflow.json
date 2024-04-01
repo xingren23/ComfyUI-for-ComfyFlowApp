@@ -1,0 +1,461 @@
+{
+  "last_node_id": 118,
+  "last_link_id": 184,
+  "nodes": [
+    {
+      "id": 117,
+      "type": "PreviewImage",
+      "pos": [
+        1400,
+        190
+      ],
+      "size": {
+        "0": 907.8045043945312,
+        "1": 930.8206787109375
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 182
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 1
+    },
+    {
+      "id": 109,
+      "type": "XY Plot",
+      "pos": [
+        1050,
+        820
+      ],
+      "size": {
+        "0": 307.7000732421875,
+        "1": 194
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "dependencies",
+          "type": "DEPENDENCIES",
+          "link": 174
+        },
+        {
+          "name": "X",
+          "type": "XY",
+          "link": 179
+        },
+        {
+          "name": "Y",
+          "type": "XY",
+          "link": 180,
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SCRIPT",
+          "type": "SCRIPT",
+          "links": [
+            184
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XY Plot"
+      },
+      "widgets_values": [
+        0,
+        "False",
+        "Vertical",
+        "True",
+        "Plot"
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "shape": 1
+    },
+    {
+      "id": 55,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        1050,
+        200
+      ],
+      "size": [
+        319.11767578125,
+        562
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 173
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 172
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 171
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 170
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 169,
+          "slot_index": 4
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": 184
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            182
+          ],
+          "shape": 3,
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        593927061734304,
+        "randomize",
+        20,
+        7,
+        "dpmpp_sde",
+        "karras",
+        1,
+        "none",
+        "true"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "shape": 1
+    },
+    {
+      "id": 112,
+      "type": "Efficient Loader",
+      "pos": [
+        590,
+        200
+      ],
+      "size": {
+        "0": 409.24957275390625,
+        "1": 462
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            173
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            172
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            171
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            170
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            169
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "DEPENDENCIES",
+          "type": "DEPENDENCIES",
+          "links": [
+            174
+          ],
+          "shape": 3,
+          "slot_index": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Efficient Loader"
+      },
+      "widgets_values": [
+        "sd15/DreamShaper_v8.safetensors",
+        "vae-ft-mse-840000-ema-pruned.safetensors",
+        -2,
+        "None",
+        1,
+        1,
+        "CLIP_POSITIVE",
+        "embedding:EasyNegative.pt",
+        "none",
+        "comfy",
+        640,
+        640,
+        1
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": 1
+    },
+    {
+      "id": 116,
+      "type": "XY Input: LoRA Plot",
+      "pos": [
+        594,
+        808
+      ],
+      "size": {
+        "0": 358.1411437988281,
+        "1": 246
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "X",
+          "type": "XY",
+          "links": [
+            179
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Y",
+          "type": "XY",
+          "links": [
+            180
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XY Input: LoRA Plot"
+      },
+      "widgets_values": [
+        "X: Model Strength, Y: Clip Strength",
+        "StickersRedmond_v15.safetensors",
+        1,
+        1,
+        2,
+        "C:\\example_folder",
+        false,
+        "ascending",
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "color": "#223333",
+      "bgcolor": "#335555",
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      169,
+      112,
+      4,
+      55,
+      4,
+      "VAE"
+    ],
+    [
+      170,
+      112,
+      3,
+      55,
+      3,
+      "LATENT"
+    ],
+    [
+      171,
+      112,
+      2,
+      55,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      172,
+      112,
+      1,
+      55,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      173,
+      112,
+      0,
+      55,
+      0,
+      "MODEL"
+    ],
+    [
+      174,
+      112,
+      6,
+      109,
+      0,
+      "DEPENDENCIES"
+    ],
+    [
+      179,
+      116,
+      0,
+      109,
+      1,
+      "XY"
+    ],
+    [
+      180,
+      116,
+      1,
+      109,
+      2,
+      "XY"
+    ],
+    [
+      182,
+      55,
+      5,
+      117,
+      0,
+      "IMAGE"
+    ],
+    [
+      184,
+      109,
+      0,
+      55,
+      5,
+      "SCRIPT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
