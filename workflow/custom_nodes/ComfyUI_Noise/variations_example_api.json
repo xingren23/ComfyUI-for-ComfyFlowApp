@@ -113,7 +113,7 @@
       "seed": 0,
       "width": 512,
       "height": 512,
-      "batch_size": 1
+      "batch_size": 3
     },
     "class_type": "BNK_NoisyLatentImage",
     "_meta": {
@@ -126,7 +126,7 @@
       "seed": 1,
       "width": 512,
       "height": 512,
-      "batch_size": 4
+      "batch_size": 3
     },
     "class_type": "BNK_NoisyLatentImage",
     "_meta": {
@@ -154,7 +154,7 @@
     "inputs": {
       "factor": 0.05,
       "latents1": [
-        "40",
+        "34",
         0
       ],
       "latents2": [
@@ -185,19 +185,6 @@
     "class_type": "BNK_InjectNoise",
     "_meta": {
       "title": "Inject Noise"
-    }
-  },
-  "40": {
-    "inputs": {
-      "multiply_by": 1,
-      "latents": [
-        "34",
-        0
-      ]
-    },
-    "class_type": "VHS_DuplicateLatents",
-    "_meta": {
-      "title": "Duplicate Latent Batch 🎥🅥🅗🅢"
     }
   }
 }
