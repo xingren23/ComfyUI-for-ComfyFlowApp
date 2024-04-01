@@ -32,6 +32,7 @@ Instead of using ComfyUI-Manager to install missing nodes, the project carefully
 - [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)
 - [ComfyUI LayerStyle](https://github.com/chflame163/ComfyUI_LayerStyle)
 - [ComfyUI ControlNet Aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+- [ComfyUI_VisualStylePrompting](https://github.com/ExponentialML/ComfyUI_VisualStylePrompting)
 
 
 
@@ -100,43 +101,12 @@ https://github.com/comfyanonymous/ComfyUI_examples
 
 * Custom_nodes
 
-```custom_nodes/
-├── ComfyUI-Advanced-ControlNet
-├── ComfyUI-AnimateDiff-Evolved
-├── ComfyUI-Custom-Scripts
-├── ComfyUI-Image-Filters
-├── ComfyUI-Impact-Pack
-├── ComfyUI-Inspire-Pack
-├── ComfyUI-VideoHelperSuite
-├── ComfyUI-WD14-Tagger
-├── ComfyUI-layerdiffuse
-├── ComfyUI_FizzNodes
-├── ComfyUI_IPAdapter_plus
-├── ComfyUI_InstantID
-├── ComfyUI_LayerStyle
-├── ComfyUI_Noise
-├── ComfyUI_TiledKSampler
-├── ComfyUI_UltimateSDUpscale
-├── ComfyUI_essentials
-├── ComfyUi_NNLatentUpscale
-├── ComfyUi_PromptStylers
-├── ControlNet-LLLite-ComfyUI
-├── OneButtonPrompt
-├── cg-use-everywhere
-├── comfyui-dynamicprompts
-├── comfyui-inpaint-nodes
-├── comfyui_controlnet_aux
-├── comfyui_segment_anything
-├── efficiency-nodes-comfyui
-├── rgthree-comfy
-├── sdxl_prompt_styler
-└── was-node-suite-comfyui
-```
+learn how to use custom nodes with workflow
 
 * sdxl-lighting workflow
 
 https://huggingface.co/ByteDance/SDXL-Lightning
-https://huggingface.co/ByteDance/AnimateDiff-Lightning
+
 
 
 ## Credits

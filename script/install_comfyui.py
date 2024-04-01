@@ -49,6 +49,7 @@ custom_nodes_repos = [
   "https://github.com/WASasquatch/was-node-suite-comfyui",
   "https://github.com/xingren23/ComfyUI-Impact-Pack Main",
   "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",    
+  "https://github.com/ExponentialML/ComfyUI_VisualStylePrompting",
 ]
 
 
